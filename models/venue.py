@@ -6,7 +6,7 @@ from app import db , bcrypt
 from models.base import BaseModel
 from config.environment import secret
 
-class Venue(db.Model, BaseModel):
+class VenueModel(db.Model, BaseModel):
 
     __tablename__ = "venues"
 
