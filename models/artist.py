@@ -18,7 +18,7 @@ class ArtistModel(db.Model, BaseModel):
     travel = db.Column(db.Text, nullable=False, unique=True)
     price = db.Column(db.Integer, nullable=False, unique=False)
     websiteUrl = db.Column(db.Text, nullable=False, unique=False)
-    youTubeUrl = db.Column(db.Text, nullable=False, unique=False)
+    videoUrl = db.Column(db.Text, nullable=False, unique=False)
     optionUrl = db.Column(db.Text, nullable=False, unique=True)
     musicUrl = db.Column(db.Text, nullable=False, unique=False)
     galleryImages = db.Column(db.Text, nullable=False, unique=False)
