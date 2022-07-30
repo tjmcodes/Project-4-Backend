@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 import jwt
 from sqlalchemy.ext.hybrid import hybrid_property
 
-from app import db
+from app import db, bcrypt
 from models.base import BaseModel
 from config.environment import secret
 
@@ -31,15 +31,12 @@ class ArtistModel(db.Model, BaseModel):
     # ! Password field to apply hash
     password_hash = db.Column(db.Text, nullable=True)
 
-    # ! We want to set a password field that doens't get saved to the db, because we don't want to save original passswrod.
-    # ! this will ensure you can provide a password field to this model when you try to create a User.
-    # ! This password will not be saved to db.
     @hybrid_property
     def password(self):
         print("passing the password function")
         pass
-    # ! We then use this password function as a decorator. It'll get called by Flask SQLAlchemy when
-    # ! the model gets created, BEFORE saving to the DB.
+
+    # ! We then use this password function as a decorator. It'll get called by Flask SQLAlchemy when the model gets created, BEFORE saving to the DB.
 
     @password.setter
     def password(self, password_plaintext):
