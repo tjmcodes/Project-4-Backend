@@ -3,6 +3,7 @@ from marshmallow.exceptions import ValidationError
 from flask import Blueprint, request
 from models.venue import VenueModel
 from serialisers.venue import VenueSchema
+from controllers.venues import venue_secure_route
 
 
 venue_schema = VenueSchema()
@@ -35,7 +36,6 @@ def login():
         return {"token": token, "message": "Welcome back!"}
     except Exception as e:
         return {"messages": "Something went wrong" }
-        print (e)
 
 
 @router.route("/allvenues", methods=["GET"])

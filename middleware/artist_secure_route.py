@@ -7,7 +7,7 @@ from models.artist import ArtistModel
 from config.environment import secret 
 
 
-def secure_route(route_function):
+def artist_secure_route(route_function):
 
     @wraps(route_function)
     def decorated_function(*args, **kwargs):
@@ -25,12 +25,12 @@ def secure_route(route_function):
 
             artist_id = payload["sub"]
 
-            artist_id = ArtistModel.query.get(artist_id)
+            artist = ArtistModel.query.get(artist_id)
 
-            if not user: 
+            if not artist: 
                 return {"message": "Unauthorized"}, HTTPStatus.UNAUTHORIZED
 
-            g.current_user = user
+            g.current_user = artist
 
         except jwt.ExpiredSignatureError: 
             return {"message": "Token has expired"}, HTTPStatus.UNAUTHORIZED

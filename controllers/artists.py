@@ -2,10 +2,9 @@ from http import HTTPStatus
 
 from flask import Blueprint, request
 from marshmallow.exceptions import ValidationError
-from middleware.secure_route import secure_route
 from models.artist import ArtistModel
 from serialisers.artist import ArtistSchema
-from middleware.secure_route import secure_route
+from middleware.artist_secure_route import artist_secure_route
 
 artist_schema = ArtistSchema()
 
