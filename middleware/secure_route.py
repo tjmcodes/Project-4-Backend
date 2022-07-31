@@ -3,7 +3,7 @@ from http import HTTPStatus
 import jwt
 from functools import wraps
 from flask import request, g
-from models.user import UserModel
+from models.artist import ArtistModel
 from config.environment import secret 
 
 
@@ -23,9 +23,9 @@ def secure_route(route_function):
             payload = jwt.decode(clean_token, secret, "HS256")
             #remember to import the secret from config > environment
 
-            user_id = payload["sub"]
+            artist_id = payload["sub"]
 
-            user = UserModel.query.get(user_id)
+            artist_id = ArtistModel.query.get(artist_id)
 
             if not user: 
                 return {"message": "Unauthorized"}, HTTPStatus.UNAUTHORIZED

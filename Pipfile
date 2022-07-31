@@ -13,6 +13,7 @@ psycopg2-binary = "*"
 datetime = "*"
 jwt = "*"
 black = "*"
+psycopg2 = "*"
 
 [dev-packages]
 

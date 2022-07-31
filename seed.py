@@ -1,5 +1,6 @@
 from app import app, db
-# //from models.language_data import languages_list, comments_list
+from models.artist_data import artist_list
+# from models.venuedata import venue_list
 # from models.user_data import user_list
 
 with app.app_context():
@@ -11,10 +12,10 @@ with app.app_context():
         print("seeding our database..")
 
 
-        # db.session.add_all(user_list)
-        # db.session.commit()
+        db.session.add_all(artist_list)
+        db.session.commit()
 
-        # db.session.add_all(languages_list)
+        # db.session.add_all(venue_list)
         # db.session.commit() # Add, commit. Like git.
 
 

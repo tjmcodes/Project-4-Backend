@@ -2,7 +2,7 @@ from models.venue import VenueModel
 
 
 
-teas_list = [
+venue_list = [
     VenueModel(
         username="Windmill", 
         password="Windmill1", 
