@@ -1,4 +1,4 @@
-# from marshmallow import fields
+from marshmallow import fields
 from app import ma
 
 from models.artist import ArtistModel
@@ -11,6 +11,8 @@ class ArtistSchema(ma.SQLAlchemyAutoSchema):
 
         load_instance = True
 
-    # comments = fields.Nested("CommentSchema", many=True)
+        exclude = ("password_hash",)
+        load_only = ('email', 'password')
 
-    # preparation = fields.Nested("PreparationSchema", many=True)
+    password = fields.String(required=True)
+

@@ -4,7 +4,7 @@ from flask import Blueprint, request
 from marshmallow.exceptions import ValidationError
 from models.artist import ArtistModel
 from serialisers.artist import ArtistSchema
-from middleware.artist_secure_route import artist_secure_route
+# from middleware.artist_secure_route import artist_secure_route
 
 artist_schema = ArtistSchema()
 
@@ -17,14 +17,13 @@ def register():
         artist = artist_schema.load(artist_dictionary)
         artist.save()
         return artist_schema.jsonify(artist)
-    
-    # ! Specific error
     except ValidationError as e:
-        return {"errors": e.messages, "messages": "Something went wrong"}
-    # ! General error
+        return {"errors": e.messages, "messages": "Something went wrong validation"}
     except Exception as e:
+        print (e)
         return { "messages": "Something went wrong" }
-  
+
+
 @router.route('/artist-login', methods=["POST"])
 def login():
     try:
@@ -43,7 +42,8 @@ def login():
 
         return { "token": token, "message": "Welcome Back!" }
 
-    except Exception as e: 
+    except Exception as e:
+        print (e)
         return { "messages": "Something went wrong" }
 
 # ! G E T  A L L  A R T I S T S

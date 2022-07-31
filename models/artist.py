@@ -13,29 +13,28 @@ class ArtistModel(db.Model, BaseModel):
 
     username = db.Column(db.Text, nullable=False, unique=True)
     email = db.Column(db.Text, nullable=False, unique=True)
-    profileImage = db.Column(db.Text, nullable=False, unique=True)
-    location = db.Column(db.Text, nullable=False, unique=False)
-    travel = db.Column(db.Integer, nullable=False, unique=True)
-    price = db.Column(db.Integer, nullable=False, unique=False)
-    websiteUrl = db.Column(db.Text, nullable=False, unique=False)
-    videoUrl = db.Column(db.Text, nullable=False, unique=False)
-    optionUrl = db.Column(db.Text, nullable=False, unique=True)
-    musicUrl = db.Column(db.Text, nullable=False, unique=False)
-    backgroundCardImage = db.Column(db.Text, nullable=False, unique=False)
-    galleryImage1 = db.Column(db.Text, nullable=False, unique=False)
-    galleryImage2 = db.Column(db.Text, nullable=False, unique=False)
-    galleryImage3 = db.Column(db.Text, nullable=False, unique=False)
-    bio = db.Column(db.Text, nullable=False, unique=False)
-    socialMediaUrl1 = db.Column(db.Text, nullable=False, unique=False)
-    socialMediaUrl2 = db.Column(db.Text, nullable=False, unique=False)
-    socialMediaUrl3 = db.Column(db.Text, nullable=False, unique=False)
+    profileImage = db.Column(db.Text, nullable=True, unique=False)
+    location = db.Column(db.Text, nullable=True, unique=False)
+    travel = db.Column(db.Integer, nullable=True, unique=True)
+    price = db.Column(db.Integer, nullable=True, unique=False)
+    websiteUrl = db.Column(db.Text, nullable=True, unique=False)
+    videoUrl = db.Column(db.Text, nullable=True, unique=False)
+    optionUrl = db.Column(db.Text, nullable=True, unique=False)
+    musicUrl = db.Column(db.Text, nullable=True, unique=False)
+    backgroundCardImage = db.Column(db.Text, nullable=True, unique=False)
+    galleryImage1 = db.Column(db.Text, nullable=True, unique=False)
+    galleryImage2 = db.Column(db.Text, nullable=True, unique=False)
+    galleryImage3 = db.Column(db.Text, nullable=True, unique=False)
+    bio = db.Column(db.Text, nullable=True, unique=False)
+    socialMediaUrl1 = db.Column(db.Text, nullable=True, unique=False)
+    socialMediaUrl2 = db.Column(db.Text, nullable=True, unique=False)
+    socialMediaUrl3 = db.Column(db.Text, nullable=True, unique=False)
     
     # ! Password field to apply hash
     password_hash = db.Column(db.Text, nullable=True)
 
     @hybrid_property
     def password(self):
-        print("passing the password function")
         pass
 
     # ! We then use this password function as a decorator. It'll get called by Flask SQLAlchemy when the model gets created, BEFORE saving to the DB.
@@ -61,8 +60,8 @@ class ArtistModel(db.Model, BaseModel):
     
         # Get the token
         token = jwt.encode(
-            payload, 
-            secret, 
+            payload,
+            secret,
             algorithm="HS256", # keywords after the 2 positional arguments
         )
 

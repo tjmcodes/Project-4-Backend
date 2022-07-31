@@ -11,9 +11,10 @@ flask-marshmallow = "*"
 marshmallow-sqlalchemy = "*"
 psycopg2-binary = "*"
 datetime = "*"
-jwt = "*"
 black = "*"
 psycopg2 = "*"
+marshmallow = "*"
+pyjwt = "*"
 
 [dev-packages]
 
