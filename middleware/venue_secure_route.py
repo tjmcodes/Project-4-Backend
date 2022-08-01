@@ -27,7 +27,7 @@ def venue_secure_route(route_function):
 
             venue = ArtistModel.query.get(venue_id)
 
-            if not venue: 
+            if not venue:
                 return {"message": "Unauthorized"}, HTTPStatus.UNAUTHORIZED
 
             g.current_user = venue

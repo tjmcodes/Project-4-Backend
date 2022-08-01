@@ -3,10 +3,12 @@ from http import HTTPStatus
 from flask import Blueprint, request
 from marshmallow.exceptions import ValidationError
 from models.artist import ArtistModel
+from serialisers.venue_comments import VenueCommentSchema
 from serialisers.artist import ArtistSchema
-# from middleware.artist_secure_route import artist_secure_route
+from middleware.venue_secure_route import venue_secure_route
 
 artist_schema = ArtistSchema()
+venue_comments_schema = VenueCommentSchema()
 
 router = Blueprint("artists", __name__)
 
@@ -56,13 +58,31 @@ def get_artists():
 
 
 # ! G E T  A R T I S T S  B Y  I D
-@router.route("/artists/<int:artists_id>", methods=["GET"])
-def get_single_artist(artists_id):
+@router.route("/artists/<int:artist_id>", methods=["GET"])
+def get_single_artist(artist_id):
 
-    artist = ArtistModel.query.get(artists_id)
+    artist = ArtistModel.query.get(artist_id)
 
     if not artist:
 
-        return { "message": "Coffee not found" }, HTTPStatus.NOT_FOUND
+        return { "message": "Artist not found" }, HTTPStatus.NOT_FOUND
 
     return artist_schema.jsonify(artist)
+
+
+# !  P O S T  A  C O M M E N T  B Y  I D
+@router.route("/artists/<int:artist_id>/comments", methods=["POST"])
+@venue_secure_route # only registered and logged in users can make request
+def create_comment(artist_id):
+
+    comment_dictionary = request.json
+
+    try:
+        comment = venue_comments_schema.load(comment_dictionary)
+    except ValidationError as e:
+        return { "errors": e.messages, "message": "There is no such artist"}, HTTPStatus.NO_CONTENT
+
+    comment.artist_id = artist_id
+    comment.save()
+    print(type(comment))
+    return artist_comments_schema.jsonify(comment), HTTPStatus.CREATED

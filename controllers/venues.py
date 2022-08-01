@@ -5,7 +5,6 @@ from models.venue import VenueModel
 from serialisers.venue import VenueSchema
 
 
-
 venue_schema = VenueSchema()
 
 router = Blueprint("users", __name__)
