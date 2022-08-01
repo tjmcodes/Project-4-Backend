@@ -18,3 +18,5 @@ class BaseModel:
     def remove(self):
         db.session.delete(self)
         db.session.commit()
+
+        # comment
