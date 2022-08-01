@@ -1,16 +1,18 @@
 from datetime import datetime, timedelta
-from email.headerregistry import Address
 import jwt
 from sqlalchemy.ext.hybrid import hybrid_property
 from app import db , bcrypt
-from models.base import BaseModel
+# from models.base import BaseModel
 from config.environment import secret
 
-class VenueModel(db.Model, BaseModel):
+class VenueModel(db.Model):
 
     __tablename__ = "venues"
     
-    v_id = db.Column(db.Integer, nullable=False, primary_key=True)
+    idv = db.Column(db.Integer, nullable=False, primary_key=True)
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow)
+
     username = db.Column(db.Text, nullable=False, unique=True)
     email = db.Column(db.Text, nullable=False, unique=True)
 
@@ -19,7 +21,7 @@ class VenueModel(db.Model, BaseModel):
     address = db.Column(db.Text, nullable=False, unique=True)
     budget = db.Column(db.Integer, nullable=False, unique=False)
     websiteUrl = db.Column(db.Text, nullable=False, unique=True)
-    videoUrl = db.Column(db.Text, nullable=True, unique=True)
+    idveoUrl = db.Column(db.Text, nullable=True, unique=True)
     optionUrl = db.Column(db.Text, nullable=True, unique=True)
     backgroundCardImage = db.Column(db.Text, nullable=False, unique=False)
     galleryImage1 = db.Column(db.Text, nullable=False, unique=False)
@@ -64,3 +66,15 @@ class VenueModel(db.Model, BaseModel):
 
 
         return token
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def update(self, coffee):
+        db.session.add(coffee)
+        db.session.commit()
+
+    def remove(self):
+        db.session.delete(self)
+        db.session.commit()

@@ -4,11 +4,11 @@ from flask import Blueprint, request
 from models.venue import VenueModel
 from serialisers.venue import VenueSchema
 from middleware.artist_secure_route import artist_secure_route
-from serialisers.venue_comments import VenueCommentSchema
+# from serialisers.venue_comments import VenueCommentSchema
 # from serialisers.artist_comments import ArtistCommentSchema
 
 venue_schema = VenueSchema()
-venue_comments_schema = VenueCommentSchema()
+# venue_comments_schema = VenueCommentSchema()
 router = Blueprint("users", __name__)
 
 @router.route('/venue-signup', methods=["POST"])
@@ -48,10 +48,10 @@ def get_teas():
     return venue_schema.jsonify(venues, many=True), HTTPStatus.OK
 
 
-@router.route("/venues/<int:venue_v_id>", methods=["GET"])
-def get_single_venue(venue_v_id):
+@router.route("/venues/<int:venue_idv>", methods=["GET"])
+def get_single_venue(venue_idv):
 
-    venue = VenueModel.query.get(venue_v_id)
+    venue = VenueModel.query.get(venue_idv)
 
     if not venue:
         return {"message": "venue not found"}, HTTPStatus.NOT_FOUND
@@ -61,18 +61,18 @@ def get_single_venue(venue_v_id):
 
 
 # !  P O S T  A  C O M M E N T  B Y  I D
-@router.route("/venues/<int:venue_v_id>/comments", methods=["POST"])
-@artist_secure_route # only registered and logged in Artists can make request
-def create_comment(venue_v_id):
+# @router.route("/venues/<int:venue_idv>/comments", methods=["POST"])
+# @artist_secure_route # only registered and logged in Artists can make request
+# def create_comment(venue_idv):
 
-    comment_dictionary = request.json
+#     comment_dictionary = request.json
 
-    try:
-        comment = venue_comments_schema.load(comment_dictionary)
-    except ValidationError as e:
-        return { "errors": e.messages, "message": "There is no such venue"}, HTTPStatus.NO_CONTENT
+#     try:
+#         comment = venue_comments_schema.load(comment_dictionary)
+#     except ValidationError as e:
+#         return { "errors": e.messages, "message": "There is no such venue"}, HTTPStatus.NO_CONTENT
 
-    comment.venue_v_id = venue_v_id
-    comment.save()
-    print(type(comment))
-    return venue_comments_schema.jsonify(comment), HTTPStatus.CREATED
+#     comment.venue_idv = venue_idv
+#     comment.save()
+#     print(type(comment))
+#     return venue_comments_schema.jsonify(comment), HTTPStatus.CREATED

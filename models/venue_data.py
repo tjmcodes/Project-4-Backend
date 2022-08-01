@@ -1,5 +1,5 @@
 from models.venue import VenueModel
-from models.venue_comments import VenueCommentModel
+# from models.venue_comments import VenueCommentModel
 
 
 
@@ -13,7 +13,7 @@ venue_list = [
         address="22 Blenheim Gardens, Brixton Hill, London SW2 5BZ", 
         budget=100, 
         websiteUrl="https://www.windmillbrixton.co.uk/", 
-        videoUrl="", 
+        idveoUrl="", 
         optionUrl="", 
         backgroundCardImage="",
         galleryImage1="", 
@@ -26,5 +26,5 @@ venue_list = [
 
 ]
 
-venue_comments_list = [
-    VenueCommentModel(content="This is a great coffee", venue_v_id=1)]
+# venue_comments_list = [
+#     VenueCommentModel(content="This is a great Venue", venue_idv=1)]
