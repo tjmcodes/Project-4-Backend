@@ -88,3 +88,5 @@ def create_comment(artist_id):
     comment.save()
     print(type(comment))
     return artist_comments_schema.jsonify(comment), HTTPStatus.CREATED
+
+# this
