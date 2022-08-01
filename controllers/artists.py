@@ -60,10 +60,10 @@ def get_artists():
 
 
 # ! G E T  A R T I S T S  B Y  I D
-@router.route("/artists/<int:artist_id>", methods=["GET"])
-def get_single_artist(artist_id):
+@router.route("/artists/<int:artist_a_id>", methods=["GET"])
+def get_single_artist(artist_a_id):
 
-    artist = ArtistModel.query.get(artist_id)
+    artist = ArtistModel.query.get(artist_a_id)
 
     if not artist:
 
@@ -73,9 +73,9 @@ def get_single_artist(artist_id):
 
 
 # !  P O S T  A  C O M M E N T  B Y  I D
-@router.route("/artists/<int:artist_id>/comments", methods=["POST"])
+@router.route("/artists/<int:artist_a_id>/comments", methods=["POST"])
 @artist_secure_route # only registered and logged in users can make request
-def create_comment(artist_id):
+def create_comment(artist_a_id):
 
     comment_dictionary = request.json
 
@@ -84,7 +84,7 @@ def create_comment(artist_id):
     except ValidationError as e:
         return { "errors": e.messages, "message": "There is no such artist"}, HTTPStatus.NO_CONTENT
 
-    comment.artist_id = artist_id
+    comment.artist_a_id = artist_a_id
     comment.save()
     print(type(comment))
     return artist_comments_schema.jsonify(comment), HTTPStatus.CREATED

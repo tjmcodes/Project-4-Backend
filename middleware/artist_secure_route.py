@@ -3,7 +3,7 @@ from functools import wraps
 import jwt
 from flask import request, g
 from models.artist import ArtistModel
-from config.environment import secret 
+from config.environment import secret
 
 
 def artist_secure_route(route_function):
@@ -22,16 +22,16 @@ def artist_secure_route(route_function):
             payload = jwt.decode(clean_token, secret, "HS256")
             #remember to import the secret from config > environment
 
-            artist_id = payload["sub"]
+            artist_a_id = payload["sub"]
 
-            artist = ArtistModel.query.get(artist_id)
+            artist = ArtistModel.query.get(artist_a_id)
 
-            if not artist: 
+            if not artist:
                 return {"message": "Unauthorized"}, HTTPStatus.UNAUTHORIZED
 
             g.current_user = artist
 
-        except jwt.ExpiredSignatureError: 
+        except jwt.ExpiredSignatureError:
             return {"message": "Token has expired"}, HTTPStatus.UNAUTHORIZED
 
         except Exception as e: 

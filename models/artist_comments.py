@@ -8,4 +8,4 @@ class ArtistCommentModel(db.Model, BaseModel):
     content = db.Column(db.Text, nullable=False)
 
     # venue_id =db.Column(db.Integer, db.ForeignKey("venues.id"), nullable=False)
-    artist_id =db.Column(db.Integer, db.ForeignKey("artists.id"), nullable=False)
+    artist_a_id =db.Column(db.Integer, db.ForeignKey("artists.a_id"), nullable=False)

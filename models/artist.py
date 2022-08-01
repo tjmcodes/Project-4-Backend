@@ -11,6 +11,7 @@ class ArtistModel(db.Model, BaseModel):
 
     __tablename__ = "artists"
 
+    a_id = db.Column(db.Integer, nullable=False, primary_key=True)
     username = db.Column(db.Text, nullable=False, unique=True)
     email = db.Column(db.Text, nullable=False, unique=True)
     profileImage = db.Column(db.Text, nullable=False, unique=False)

@@ -22,9 +22,9 @@ def venue_secure_route(route_function):
             payload = jwt.decode(clean_token, secret, "HS256")
             #remember to import the secret from config > environment
 
-            venue_id = payload["sub"]
+            venue_v_id = payload["sub"]
 
-            venue = VenueModel.query.get(venue_id)
+            venue = VenueModel.query.get(venue_v_id)
 
             if not venue:
                 return {"message": "Unauthorized"}, HTTPStatus.UNAUTHORIZED
