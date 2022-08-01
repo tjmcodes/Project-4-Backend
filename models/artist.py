@@ -6,7 +6,7 @@ from sqlalchemy.ext.hybrid import hybrid_property
 from app import db, bcrypt
 from models.base import BaseModel
 from config.environment import secret
-
+from models.artist_comments import ArtistCommentModel
 class ArtistModel(db.Model, BaseModel):
 
     __tablename__ = "artists"
@@ -30,6 +30,10 @@ class ArtistModel(db.Model, BaseModel):
     socialMediaUrl2 = db.Column(db.Text, nullable=True, unique=True)
     socialMediaUrl3 = db.Column(db.Text, nullable=True, unique=True)
     
+
+    comments = db.relationship('ArtistCommentModel', backref='artist_comments', cascade="all, delete")
+
+
     # ! Password field to apply hash
     password_hash = db.Column(db.Text, nullable=True)
 

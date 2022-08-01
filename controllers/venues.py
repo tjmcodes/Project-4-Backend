@@ -5,7 +5,7 @@ from models.venue import VenueModel
 from serialisers.venue import VenueSchema
 from middleware.artist_secure_route import artist_secure_route
 from serialisers.venue_comments import VenueCommentSchema
-from serialisers.artist_comments import ArtistCommentSchema
+# from serialisers.artist_comments import ArtistCommentSchema
 
 venue_schema = VenueSchema()
 venue_comments_schema = VenueCommentSchema()
@@ -68,7 +68,7 @@ def create_comment(venue_id):
     comment_dictionary = request.json
 
     try:
-        comment = artist_comments_schema.load(comment_dictionary)
+        comment = venue_comments_schema.load(comment_dictionary)
     except ValidationError as e:
         return { "errors": e.messages, "message": "There is no such venue"}, HTTPStatus.NO_CONTENT
 

@@ -1,4 +1,5 @@
 from models.venue import VenueModel
+from models.venue_comments import VenueCommentModel
 
 
 
@@ -24,3 +25,6 @@ venue_list = [
         socialMediaUrl3=""),
 
 ]
+
+venue_comments_list = [
+    VenueCommentModel(content="This is a great coffee", venue_id=1)]

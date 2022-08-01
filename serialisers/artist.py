@@ -3,6 +3,7 @@ from app import ma
 
 from models.artist import ArtistModel
 
+
 class ArtistSchema(ma.SQLAlchemyAutoSchema):
 
     class Meta:
@@ -13,6 +14,7 @@ class ArtistSchema(ma.SQLAlchemyAutoSchema):
 
         exclude = ("password_hash",)
         load_only = ('email', 'password')
-
+    
+    comments = fields.Nested("VenueCommentSchema", many=True)
     password = fields.String(required=True)
 

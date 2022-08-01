@@ -1,6 +1,7 @@
 
 # ! Import user
 from models.artist import ArtistModel
+from models.artist_comments import ArtistCommentModel
 
 # ! List of users
 artist_list = [
@@ -26,3 +27,6 @@ artist_list = [
         socialMediaUrl3 = ""
         )
 ]
+
+artist_comments_list = [
+    ArtistCommentModel(content="This is a great coffee", artist_id=1)]

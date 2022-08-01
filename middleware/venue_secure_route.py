@@ -1,10 +1,9 @@
 from http import HTTPStatus
-
-import jwt
 from functools import wraps
+import jwt
 from flask import request, g
-from models.artist import ArtistModel
-from config.environment import secret 
+from models.venue import VenueModel
+from config.environment import secret
 
 
 def venue_secure_route(route_function):
@@ -25,7 +24,7 @@ def venue_secure_route(route_function):
 
             venue_id = payload["sub"]
 
-            venue = ArtistModel.query.get(venue_id)
+            venue = VenueModel.query.get(venue_id)
 
             if not venue:
                 return {"message": "Unauthorized"}, HTTPStatus.UNAUTHORIZED

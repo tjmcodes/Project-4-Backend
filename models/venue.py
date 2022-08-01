@@ -9,11 +9,10 @@ from config.environment import secret
 class VenueModel(db.Model, BaseModel):
 
     __tablename__ = "venues"
-
+    
     username = db.Column(db.Text, nullable=False, unique=True)
     email = db.Column(db.Text, nullable=False, unique=True)
-   
-    
+
     venueImage = db.Column(db.Text, nullable=False, unique=True)
     location = db.Column(db.Text, nullable=False, unique=False)
     address = db.Column(db.Text, nullable=False, unique=True)

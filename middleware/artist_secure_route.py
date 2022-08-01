@@ -1,7 +1,6 @@
 from http import HTTPStatus
-
-import jwt
 from functools import wraps
+import jwt
 from flask import request, g
 from models.artist import ArtistModel
 from config.environment import secret 
