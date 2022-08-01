@@ -3,10 +3,12 @@ from marshmallow.exceptions import ValidationError
 from flask import Blueprint, request
 from models.venue import VenueModel
 from serialisers.venue import VenueSchema
-
+from middleware.artist_secure_route import artist_secure_route
+from serialisers.venue_comments import VenueCommentSchema
+from serialisers.artist_comments import ArtistCommentSchema
 
 venue_schema = VenueSchema()
-
+venue_comments_schema = VenueCommentSchema()
 router = Blueprint("users", __name__)
 
 @router.route('/venue-signup', methods=["POST"])
@@ -39,19 +41,38 @@ def login():
         return {"messages": "Something went wrong" }
 
 
-@router.route("/allvenues", methods=["GET"])
+@router.route("/venues", methods=["GET"])
 def get_teas():
-    teas = VenueModel.query.all()
+    venues = VenueModel.query.all()
 
-    return venue_schema.jsonify(teas, many=True), HTTPStatus.OK
+    return venue_schema.jsonify(venues, many=True), HTTPStatus.OK
 
 
-@router.route("/allvenues/<int:venue_id>", methods=["GET"])
-def get_single_tea(tea_id):
+@router.route("/venues/<int:venue_id>", methods=["GET"])
+def get_single_venue(venue_id):
 
-    tea = VenueModel.query.get(tea_id)
+    venue = VenueModel.query.get(venue_id)
 
-    if not tea:
+    if not venue:
         return {"message": "venue not found"}, HTTPStatus.NOT_FOUND
 
-    return venue_schema.jsonify(tea), HTTPStatus.OK
+    return venue_schema.jsonify(venue), HTTPStatus.OK
+
+
+
+# !  P O S T  A  C O M M E N T  B Y  I D
+@router.route("/venues/<int:venue_id>/comments", methods=["POST"])
+@artist_secure_route # only registered and logged in Artists can make request
+def create_comment(venue_id):
+
+    comment_dictionary = request.json
+
+    try:
+        comment = artist_comments_schema.load(comment_dictionary)
+    except ValidationError as e:
+        return { "errors": e.messages, "message": "There is no such venue"}, HTTPStatus.NO_CONTENT
+
+    comment.venue_id = venue_id
+    comment.save()
+    print(type(comment))
+    return venue_comments_schema.jsonify(comment), HTTPStatus.CREATED
