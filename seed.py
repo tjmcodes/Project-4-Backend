@@ -1,6 +1,6 @@
 from app import app, db
 from models.artist_data import artist_list
-from models.venuedata import venue_list
+from models.venue_data import venue_list
 # from models.user_data import user_list
 
 with app.app_context():

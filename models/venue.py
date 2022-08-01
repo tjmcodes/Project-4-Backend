@@ -12,24 +12,26 @@ class VenueModel(db.Model, BaseModel):
 
     username = db.Column(db.Text, nullable=False, unique=True)
     email = db.Column(db.Text, nullable=False, unique=True)
-    password_hash = db.Column(db.Text, nullable=True)
+   
     
     venueImage = db.Column(db.Text, nullable=False, unique=True)
-    address = db.Column(db.Text, nullable=False, unique=False)
-    budget = db.Column(db.Integer, nullable=False, unique=True)
-    websiteUrl = db.Column(db.Text, nullable=False, unique=False)
-    videoUrl = db.Column(db.Text, nullable=False, unique=False)
-    optionUrl = db.Column(db.Text, nullable=False, unique=True)
-    cardimage = db.Column(db.Text, nullable=False, unique=False)
+    location = db.Column(db.Text, nullable=False, unique=False)
+    address = db.Column(db.Text, nullable=False, unique=True)
+    budget = db.Column(db.Integer, nullable=False, unique=False)
+    websiteUrl = db.Column(db.Text, nullable=False, unique=True)
+    videoUrl = db.Column(db.Text, nullable=True, unique=True)
+    optionUrl = db.Column(db.Text, nullable=True, unique=True)
+    backgroundCardImage = db.Column(db.Text, nullable=False, unique=False)
     galleryImage1 = db.Column(db.Text, nullable=False, unique=False)
-    galleryImage2 = db.Column(db.Text, nullable=False, unique=False)
-    galleryImage3 = db.Column(db.Text, nullable=False, unique=False)
-    description = db.Column(db.Text, nullable=False, unique=False)
-    socialMediaUrl1 = db.Column(db.Text, nullable=False, unique=False)
-    socialMediaUrl2 = db.Column(db.Text, nullable=False, unique=False)
-    socialMediaUrl3 = db.Column(db.Text, nullable=False, unique=False)
+    galleryImage2 = db.Column(db.Text, nullable=True, unique=False)
+    galleryImage3 = db.Column(db.Text, nullable=True, unique=False)
+    description = db.Column(db.Text, nullable=False, unique=True)
+    socialMediaUrl1 = db.Column(db.Text, nullable=False, unique=True)
+    socialMediaUrl2 = db.Column(db.Text, nullable=True, unique=True)
+    socialMediaUrl3 = db.Column(db.Text, nullable=True, unique=True)
 
-
+    
+    password_hash = db.Column(db.Text, nullable=True)
     @hybrid_property
     def password(self):
         pass

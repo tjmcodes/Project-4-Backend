@@ -3,7 +3,7 @@ from marshmallow.exceptions import ValidationError
 from flask import Blueprint, request
 from models.venue import VenueModel
 from serialisers.venue import VenueSchema
-from controllers.venues import venue_secure_route
+
 
 
 venue_schema = VenueSchema()
@@ -18,8 +18,10 @@ def register():
         user.save()
         return venue_schema.jsonify(user)
     except ValidationError as e:
+        print(e)
         return {"errors": e.messages, "messages": "Something went wrong"}
     except Exception as e:
+        print(e)
         return { "messages": "Something went wrong" }
 
 
