@@ -27,4 +27,4 @@ venue_list = [
 ]
 
 venue_comments_list = [
-    VenueCommentModel(content="This is a great Venue", venue_id=1)]
+    VenueCommentModel(content="This is a great Venue", venue_id=1, artist_id=1)]

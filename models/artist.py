@@ -50,7 +50,7 @@ class ArtistModel(db.Model, BaseModel):
 
     @password.setter
     def password(self, password_plaintext):
-        print("inside password hash method")
+        print("inside artist password hash method")
         # ! Write our code to hash the password. It will give us back an encoded pw
         encoded_pw = bcrypt.generate_password_hash(password_plaintext)
         # ! The decoded password, that we actually want to store.

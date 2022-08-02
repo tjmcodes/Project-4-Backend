@@ -5,6 +5,8 @@ from app import db , bcrypt
 from models.base import BaseModel
 from config.environment import secret
 
+from models.venue_comments import VenueCommentModel
+
 class VenueModel(db.Model, BaseModel):
 
     __tablename__ = "venues"
@@ -32,7 +34,7 @@ class VenueModel(db.Model, BaseModel):
     socialMediaUrl2 = db.Column(db.Text, nullable=True, unique=True)
     socialMediaUrl3 = db.Column(db.Text, nullable=True, unique=True)
 
-    # comments = db.relationship('ArtistCommentModel', backref='artist_comments', cascade="all, delete")
+    comments = db.relationship('VenueCommentModel', backref='venue_comments', cascade="all, delete")
 
     password_hash = db.Column(db.Text, nullable=True)
     @hybrid_property
@@ -41,7 +43,7 @@ class VenueModel(db.Model, BaseModel):
 
     @password.setter
     def password(self,password_plaintext):
-        print("inside password hash method")
+        print("inside venue password hash method")
         # ! Write our code to hash the password. It will give us back an encoded pw
         encoded_pw = bcrypt.generate_password_hash(password_plaintext)
         # ! The decoded password, that we actually want to store.
