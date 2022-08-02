@@ -17,7 +17,7 @@ def venue_secure_route(route_function):
             return {"message": "Unauthorized"}, HTTPStatus.Unauthorized
 
         clean_token = raw_token.replace("Bearer ", "")
-        
+    
         try:
             payload = jwt.decode(clean_token, secret, "HS256")
             #remember to import the secret from config > environment

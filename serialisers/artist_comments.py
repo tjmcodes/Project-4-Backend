@@ -7,4 +7,4 @@ class ArtistCommentSchema(ma.SQLAlchemyAutoSchema):
         model = ArtistCommentModel
         load_instance = True
 
-        include_fk = True
+        # include_fk = True

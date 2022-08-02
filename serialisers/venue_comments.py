@@ -1,8 +1,8 @@
-# from app import ma
-# from models.venue_comments import VenueCommentModel
+from app import ma
+from models.venue_comments import VenueCommentModel
 
-# class VenueCommentSchema(ma.SQLAlchemyAutoSchema):
+class VenueCommentSchema(ma.SQLAlchemyAutoSchema):
 
-#     class Meta:
-#         model = VenueCommentModel
-#         load_instance = True
+    class Meta:
+        model = VenueCommentModel
+        load_instance = True

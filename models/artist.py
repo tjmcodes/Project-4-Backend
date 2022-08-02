@@ -4,16 +4,17 @@ import jwt
 from sqlalchemy.ext.hybrid import hybrid_property
 
 from app import db, bcrypt
-# from models.base import BaseModel
+from models.base import BaseModel
 from config.environment import secret
-# from models.artist_comments import ArtistCommentModel
-class ArtistModel(db.Model):
+from models.artist_comments import ArtistCommentModel
+
+class ArtistModel(db.Model, BaseModel):
 
     __tablename__ = "artists"
 
     # ida = db.Column(db.Integer, nullable=False, primary_key=True)
-    created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    updated_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow)
+    # created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    # updated_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow)
     
     username = db.Column(db.Text, nullable=False, unique=True)
     email = db.Column(db.Text, nullable=False, unique=True)
@@ -76,15 +77,15 @@ class ArtistModel(db.Model):
 
         return token
 
-    def save(self):
-        db.session.add(self)
-        db.session.commit()
+    # def save(self):
+    #     db.session.add(self)
+    #     db.session.commit()
     
-    def update(self, coffee):
-        db.session.add(coffee)
-        db.session.commit()
+    # def update(self, coffee):
+    #     db.session.add(coffee)
+    #     db.session.commit()
 
-    def remove(self):
-        db.session.delete(self)
-        db.session.commit()
+    # def remove(self):
+    #     db.session.delete(self)
+    #     db.session.commit()
 

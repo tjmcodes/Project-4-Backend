@@ -1,5 +1,5 @@
 from models.venue import VenueModel
-# from models.venue_comments import VenueCommentModel
+from models.venue_comments import VenueCommentModel
 
 
 
@@ -26,5 +26,5 @@ venue_list = [
 
 ]
 
-# venue_comments_list = [
-#     VenueCommentModel(content="This is a great Venue", venue_idv=1)]
+venue_comments_list = [
+    VenueCommentModel(content="This is a great Venue", venue_id=1)]

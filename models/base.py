@@ -11,9 +11,9 @@ class BaseModel:
         db.session.add(self)
         db.session.commit()
     
-    # def update(self, coffee):
-    #     db.session.add(coffee)
-    #     db.session.commit()
+    def update(self, coffee):
+        db.session.add(coffee)
+        db.session.commit()
 
     def remove(self):
         db.session.delete(self)
