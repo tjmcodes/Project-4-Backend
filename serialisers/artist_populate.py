@@ -2,7 +2,6 @@ from marshmallow import fields
 from app import ma
 
 from models.artist import ArtistModel
-from serialisers.venue_comments import VenueCommentSchema
 
 class ArtistSchema(ma.SQLAlchemyAutoSchema):
 
@@ -15,5 +14,5 @@ class ArtistSchema(ma.SQLAlchemyAutoSchema):
         exclude = ("password_hash",)
         load_only = ('email', 'password')
 
-    comments = fields.Nested("VenueCommentSchema", many=True)
+    user = fields.Nested("ArtistSchema", many=True)
     password = fields.String(required=True)

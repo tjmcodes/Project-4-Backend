@@ -17,7 +17,10 @@ class VenueModel(db.Model, BaseModel):
 
     username = db.Column(db.Text, nullable=False, unique=True)
     email = db.Column(db.Text, nullable=False, unique=True)
+    role = db.Column(db.Text, nullable=False, unique=False)
+    
 
+    venueName = db.Column(db.Text, nullable=False, unique=True)
     venueImage = db.Column(db.Text, nullable=False, unique=True)
     location = db.Column(db.Text, nullable=False, unique=False)
     address = db.Column(db.Text, nullable=False, unique=True)

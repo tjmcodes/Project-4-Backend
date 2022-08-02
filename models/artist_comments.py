@@ -9,3 +9,4 @@ class ArtistCommentModel(db.Model, BaseModel):
 
     venue_id =db.Column(db.Integer, db.ForeignKey("venues.id"), nullable=False)
     artist_id =db.Column(db.Integer, db.ForeignKey("artists.id"), nullable=False)
+    

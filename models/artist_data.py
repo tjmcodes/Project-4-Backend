@@ -9,6 +9,7 @@ artist_list = [
         username="Teresa",
         password="Teresa55!",
         email="teresa@teresa.com",
+        artistName="Layla",
         profileImage = "https://res.cloudinary.com/tjmcodes/image/upload/v1658916228/mfykapjyjasaxfdhfrbt.jpg",
         location = "London",
         travel = 0-50,

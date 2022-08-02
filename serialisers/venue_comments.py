@@ -6,3 +6,5 @@ class VenueCommentSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = VenueCommentModel
         load_instance = True
+         
+        include_fk = True

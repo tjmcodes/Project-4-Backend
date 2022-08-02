@@ -1,5 +1,5 @@
-from app import db
 from datetime import *
+from app import db
 
 class BaseModel:
 

@@ -5,9 +5,11 @@ from models.venue_comments import VenueCommentModel
 
 venue_list = [
     VenueModel(
-        username="Windmill", 
+        username="Bobby", 
         password="Windmill1",
-        email="Windmill@Windmill.com", 
+        email="Windmill@Windmill.com",
+        role="Manager", 
+        venueName="The Windmill",
         venueImage="https://upload.wikimedia.org/wikipedia/commons/6/6a/Windmill%2C_Brixton_Hill%2C_SW2_%283151353450%29.jpg",
         location="london",
         address="22 Blenheim Gardens, Brixton Hill, London SW2 5BZ", 

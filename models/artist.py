@@ -19,6 +19,7 @@ class ArtistModel(db.Model, BaseModel):
     username = db.Column(db.Text, nullable=False, unique=True)
     email = db.Column(db.Text, nullable=False, unique=True)
     
+    artistName = db.Column(db.Text, nullable=False, unique=False)
     profileImage = db.Column(db.Text, nullable=False, unique=False)
     location = db.Column(db.Text, nullable=False, unique=False)
     travel = db.Column(db.Integer, nullable=False, unique=False)
