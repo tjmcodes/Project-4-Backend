@@ -9,7 +9,7 @@ class VenueModel(db.Model):
 
     __tablename__ = "venues"
     
-    idv = db.Column(db.Integer, nullable=False, primary_key=True)
+    # idv = db.Column(db.Integer, nullable=False, primary_key=True)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow)
 
@@ -21,7 +21,7 @@ class VenueModel(db.Model):
     address = db.Column(db.Text, nullable=False, unique=True)
     budget = db.Column(db.Integer, nullable=False, unique=False)
     websiteUrl = db.Column(db.Text, nullable=False, unique=True)
-    idveoUrl = db.Column(db.Text, nullable=True, unique=True)
+    videoUrl = db.Column(db.Text, nullable=True, unique=True)
     optionUrl = db.Column(db.Text, nullable=True, unique=True)
     backgroundCardImage = db.Column(db.Text, nullable=False, unique=False)
     galleryImage1 = db.Column(db.Text, nullable=False, unique=False)

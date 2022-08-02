@@ -22,9 +22,9 @@ def artist_secure_route(route_function):
             payload = jwt.decode(clean_token, secret, "HS256")
             #remember to import the secret from config > environment
 
-            artist_ida = payload["sub"]
+            artist_id = payload["sub"]
 
-            artist = ArtistModel.query.get(artist_ida)
+            artist = ArtistModel.query.get(artist_id)
 
             if not artist:
                 return {"message": "Unauthorized"}, HTTPStatus.UNAUTHORIZED

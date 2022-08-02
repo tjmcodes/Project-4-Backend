@@ -8,4 +8,4 @@
 
 #     content = db.Column(db.Text, nullable=False)
 
-#     venue_id =db.Column(db.Integer, db.ForeignKey("venues.idv"), nullable=False)
+#     venue_id =db.Column(db.Integer, db.ForeignKey("venues.id"), nullable=False)

@@ -22,16 +22,16 @@ def venue_secure_route(route_function):
             payload = jwt.decode(clean_token, secret, "HS256")
             #remember to import the secret from config > environment
 
-            venue_idv = payload["sub"]
+            venue_id = payload["sub"]
 
-            venue = VenueModel.query.get(venue_idv)
+            venue = VenueModel.query.get(venue_id)
 
             if not venue:
                 return {"message": "Unauthorized"}, HTTPStatus.UNAUTHORIZED
 
             g.current_user = venue
 
-        except jwt.ExpiredSignatureError: 
+        except jwt.ExpiredSignatureError:
             return {"message": "Token has expired"}, HTTPStatus.UNAUTHORIZED
 
         except Exception as e: 

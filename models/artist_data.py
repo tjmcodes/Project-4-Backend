@@ -1,7 +1,7 @@
 
 # ! Import user
 from models.artist import ArtistModel
-# from models.artist_comments import ArtistCommentModel
+from models.artist_comments import ArtistCommentModel
 
 # ! List of users
 artist_list = [
@@ -14,7 +14,7 @@ artist_list = [
         travel = 0-50,
         price = 500,
         websiteUrl = "https://www.insomniac.com/music/artists/india-jordan/",
-        idveoUrl = "https://www.youtube.com/watch?v=P5YJKW3BAiQ",
+        videoUrl = "https://www.youtube.com/watch?v=P5YJKW3BAiQ",
         optionUrl = "",
         musicUrl = "https://open.spotify.com/artist/5RMLpCv3ic2KtGnqJ7eMG4?autoplay=true",
         backgroundCardImage = "https://static.ra.co/images/news/2022/india-jordan-new-name.jpeg",
@@ -28,5 +28,5 @@ artist_list = [
         )
 ]
 
-# artist_comments_list = [
-#     ArtistCommentModel(content="This is a great coffee", artist_ida=1)]
+artist_comments_list = [
+    ArtistCommentModel(content="This is a great coffee", artist_id=1,  venue_id =1)]

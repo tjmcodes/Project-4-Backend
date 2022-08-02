@@ -19,11 +19,3 @@ from controllers import artists, venues
 
 app.register_blueprint(artists.router, url_prefix="/api")
 app.register_blueprint(venues.router, url_prefix="/api")
-
-
-
-
-
-
-
-

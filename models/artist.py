@@ -11,7 +11,7 @@ class ArtistModel(db.Model):
 
     __tablename__ = "artists"
 
-    ida = db.Column(db.Integer, nullable=False, primary_key=True)
+    # ida = db.Column(db.Integer, nullable=False, primary_key=True)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow)
     
@@ -23,7 +23,7 @@ class ArtistModel(db.Model):
     travel = db.Column(db.Integer, nullable=False, unique=False)
     price = db.Column(db.Integer, nullable=False, unique=False)
     websiteUrl = db.Column(db.Text, nullable=False, unique=True)
-    idveoUrl = db.Column(db.Text, nullable=False, unique=True)
+    videoUrl = db.Column(db.Text, nullable=False, unique=True)
     optionUrl = db.Column(db.Text, nullable=True, unique=True)
     musicUrl = db.Column(db.Text, nullable=False, unique=True)
     backgroundCardImage = db.Column(db.Text, nullable=False, unique=False)
@@ -35,7 +35,7 @@ class ArtistModel(db.Model):
     socialMediaUrl2 = db.Column(db.Text, nullable=True, unique=True)
     socialMediaUrl3 = db.Column(db.Text, nullable=True, unique=True)
 
-    # comments = db.relationship('ArtistCommentModel', backref='artist_comments', cascade="all, delete")
+    comments = db.relationship('ArtistCommentModel', backref='artist_comments', cascade="all, delete")
 
 
     # ! Password field to apply hash

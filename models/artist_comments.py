@@ -1,11 +1,11 @@
-# from app import db
-# from models.artist import ArtistModel
+from app import db
+from models.base import BaseModel
 
-# class ArtistCommentModel(db.Model, ArtistModel):
+class ArtistCommentModel(db.Model, BaseModel):
 
-#     __tablename__ = "artist_comments"
+    __tablename__ = "artist_comments"
 
-#     content = db.Column(db.Text, nullable=False)
+    content = db.Column(db.Text, nullable=False)
 
-#     # venue_id =db.Column(db.Integer, db.ForeignKey("venues.id"), nullable=False)
-#     artist_ida =db.Column(db.Integer, db.ForeignKey("artists.ida"), nullable=False)
+    venue_id =db.Column(db.Integer, db.ForeignKey("venues.id"), nullable=False)
+    artist_id =db.Column(db.Integer, db.ForeignKey("artists.id"), nullable=False)
