@@ -73,7 +73,7 @@ def get_single_artist(artist_ida):
 
 
 # !  P O S T  A  C O M M E N T  B Y  I D
-@router.route("/artists/<int:artist_ida>/comments", methods=["POST"])
+@router.route("/artists/<int:artist_id>/comments", methods=["POST"])
 @venue_secure_route # only registered and logged in users can make request
 def create_comment(artist_id):
 
