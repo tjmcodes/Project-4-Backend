@@ -7,6 +7,9 @@ from app import db, bcrypt
 from models.base import BaseModel
 from config.environment import secret
 from models.artist_comments import ArtistCommentModel
+from models.genres import GenreModel
+from models.artist_genres import artist_genre
+
 
 class ArtistModel(db.Model, BaseModel):
 
@@ -21,6 +24,7 @@ class ArtistModel(db.Model, BaseModel):
     
     artistName = db.Column(db.Text, nullable=False, unique=False)
     profileImage = db.Column(db.Text, nullable=False, unique=False)
+    genre = db.Column(db.Text, nullable=False, unique=False)
     location = db.Column(db.Text, nullable=False, unique=False)
     travel = db.Column(db.Integer, nullable=False, unique=False)
     price = db.Column(db.Integer, nullable=False, unique=False)
@@ -37,6 +41,7 @@ class ArtistModel(db.Model, BaseModel):
     socialMediaUrl2 = db.Column(db.Text, nullable=True, unique=True)
     socialMediaUrl3 = db.Column(db.Text, nullable=True, unique=True)
 
+    genre = db.relationship('GenreModel', backref='genre_type', secondary=artist_genre)
     comments = db.relationship('ArtistCommentModel', backref='artist_comments', cascade="all, delete")
 
 

@@ -1,18 +1,18 @@
-from marshmallow import fields
-from app import ma
+# from marshmallow import fields
+# from app import ma
 
-from models.artist import ArtistModel
+# from models.artist import ArtistModel
 
-class ArtistSchema(ma.SQLAlchemyAutoSchema):
+# class ArtistSchema(ma.SQLAlchemyAutoSchema):
 
-    class Meta:
+#     class Meta:
 
-        model = ArtistModel
+#         model = ArtistModel
 
-        load_instance = True
+#         load_instance = True
 
-        exclude = ("password_hash",)
-        load_only = ('email', 'password')
+#         exclude = ("password_hash",)
+#         load_only = ('email', 'password')
 
-    user = fields.Nested("ArtistSchema", many=True)
-    password = fields.String(required=True)
+#     user = fields.Nested("ArtistSchema", many=True)
+#     password = fields.String(required=True)

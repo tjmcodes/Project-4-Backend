@@ -3,6 +3,7 @@ from app import ma
 
 from models.artist import ArtistModel
 from serialisers.venue_comments import VenueCommentSchema
+from serialisers.artist_genres import GenreSchema
 
 class ArtistSchema(ma.SQLAlchemyAutoSchema):
 
@@ -16,4 +17,5 @@ class ArtistSchema(ma.SQLAlchemyAutoSchema):
         load_only = ('email', 'password')
 
     comments = fields.Nested("VenueCommentSchema", many=True)
+    genre = fields.Nested("GenreSchema", many=True)
     password = fields.String(required=True)

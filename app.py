@@ -15,7 +15,8 @@ ma = Marshmallow(app)
 
 bcrypt = Bcrypt(app)
 
-from controllers import artists, venues
+from controllers import artists, venues, genres
 
 app.register_blueprint(artists.router, url_prefix="/api")
 app.register_blueprint(venues.router, url_prefix="/api")
+app.register_blueprint(genres.router, url_prefix="/api")

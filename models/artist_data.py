@@ -2,6 +2,13 @@
 # ! Import user
 from models.artist import ArtistModel
 from models.artist_comments import ArtistCommentModel
+from models.genres import GenreModel
+
+genre_list = [
+    GenreModel(genre="Pop"),
+    GenreModel(genre="Acoustic"),
+    GenreModel(genre="Lofi")
+]
 
 # ! List of users
 artist_list = [
@@ -11,6 +18,7 @@ artist_list = [
         email="teresa@teresa.com",
         artistName="Layla",
         profileImage = "https://res.cloudinary.com/tjmcodes/image/upload/v1658916228/mfykapjyjasaxfdhfrbt.jpg",
+        genre = genre_list,
         location = "London",
         travel = 0-50,
         price = 500,
