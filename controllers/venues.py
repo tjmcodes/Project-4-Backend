@@ -4,6 +4,7 @@ from flask import Blueprint, request, g
 from models.venue import VenueModel
 from serialisers.venue import VenueSchema
 from middleware.artist_secure_route import artist_secure_route
+from middleware.venue_secure_route import venue_secure_route
 from serialisers.venue_comments import VenueCommentSchema
 # from serialisers.artist_comments import ArtistCommentSchema
 
@@ -81,3 +82,24 @@ def create_comment(venue_id):
     comment.save()
     print(type(comment))
     return venue_comments_schema.jsonify(comment), HTTPStatus.CREATED
+
+
+@router.route("/venues/<int:venue_id>", methods=["PUT"])
+def update_venueinfo(venue_id):
+    venue_dictionary = request.json
+    existing_venue = VenueModel.query.get(venue_id)
+
+    if not existing_venue:
+        return {"message": "No Venue with ID"}, HTTPStatus.NOT_FOUND
+
+    try:
+        venue = venue_schema.load(venue_dictionary, instance=existing_venue, partial=True)
+
+    except ValidationError as e:
+        return {"errors:": e.messages, "messages": "Something went wrong"}
+
+    venue.save()
+
+    return venue_schema.jsonify(venue), HTTPStatus.OK
+
+
