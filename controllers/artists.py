@@ -60,10 +60,10 @@ def get_artists():
 
 
 # ! G E T  A R T I S T S  B Y  I D
-@router.route("/artists/<int:artist_ida>", methods=["GET"])
-def get_single_artist(artist_ida):
+@router.route("/artists/<int:artist_id>", methods=["GET"])
+def get_single_artist(artist_id):
 
-    artist = ArtistModel.query.get(artist_ida)
+    artist = ArtistModel.query.get(artist_id)
 
     if not artist:
 
