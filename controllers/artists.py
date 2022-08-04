@@ -111,8 +111,6 @@ def create_comment(artist_id):
     comment_dictionary = request.json
     comment_dictionary["artist_id"] = artist_id
     comment_dictionary["venue_id"] = g.current_user.id
-    # comment_dictionary["venue_venueName"] = g.current_user.venueName
-    # comment_dictionary["venue_role"] = g.current_user.role
     print(comment_dictionary)
 
 
