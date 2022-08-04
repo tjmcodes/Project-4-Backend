@@ -1,6 +1,7 @@
 from marshmallow import fields
 from models.venue import VenueModel
 from serialisers.venue_types import TypeSchema
+from serialisers.artist_comments import ArtistCommentSchema
 from app import ma
 
 
@@ -15,3 +16,4 @@ class VenueSchema(ma.SQLAlchemyAutoSchema):
 
     password = fields.String(required=True)
     type = fields.Nested("TypeSchema", many=True)
+    comments = fields.Nested("ArtistCommentSchema", many=True)
