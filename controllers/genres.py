@@ -5,6 +5,8 @@ from marshmallow.exceptions import ValidationError
 from serialisers.artist import ArtistSchema
 from serialisers.artist_genres import GenreSchema
 from models.genres import GenreModel
+from middleware.artist_secure_route import artist_secure_route
+from models.artist import ArtistModel
 
 
 artist_schema = ArtistSchema()
@@ -37,3 +39,20 @@ def remove_genre(genre_id):
     genre.remove()
 
     return '', HTTPStatus.NO_CONTENT
+
+@router.route("/artists/<int:artist_id>/genres/<int:genre_id>", methods=["POST"])
+@artist_secure_route
+def create_tea_note(artist_id, genre_id):
+
+    artist = ArtistModel.query.get(artist_id)
+
+    genre = GenreModel.query.get(genre_id)
+
+    if not artist or not genre:
+        return {"message": "Artist not found"}, HTTPStatus.NOT_FOUND
+
+    artist.genre.append(genre)
+
+    artist.save()
+
+    return artist_schema.jsonify(artist), HTTPStatus.OK

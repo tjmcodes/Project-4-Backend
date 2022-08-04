@@ -17,3 +17,4 @@ class VenueSchema(ma.SQLAlchemyAutoSchema):
     comments = fields.Nested("ArtistCommentSchema", many=True)
     password = fields.String(required=True)
     type = fields.Nested("TypeSchema", many=True)
+    
