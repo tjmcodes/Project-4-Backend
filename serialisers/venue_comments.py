@@ -11,6 +11,8 @@ class VenueCommentSchema(ma.SQLAlchemyAutoSchema):
         load_instance = True
         include_fk = True
 
+    # artist = fields.Nested("ArtistSchema")
     venuePopulate = fields.Nested("VenuePopulateSchema")
+    
 
     
