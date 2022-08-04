@@ -4,14 +4,15 @@ from sqlalchemy.ext.hybrid import hybrid_property
 from app import db , bcrypt
 from models.base import BaseModel
 from config.environment import secret
-
 from models.venue_comments import VenueCommentModel
+from models.types import TypeModel
+from models.venue_types import venue_type
 
 class VenueModel(db.Model, BaseModel):
 
     __tablename__ = "venues"
     
-    # idv = db.Column(db.Integer, nullable=False, primary_key=True)
+    # id = db.Column(db.Integer, nullable=False, primary_key=True)
     # created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     # updated_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow)
 
@@ -21,6 +22,7 @@ class VenueModel(db.Model, BaseModel):
     
 
     venueName = db.Column(db.Text, nullable=False, unique=True)
+    type = db.Column(db.Text, nullable=False, unique=False)
     venueImage = db.Column(db.Text, nullable=False, unique=True)
     location = db.Column(db.Text, nullable=False, unique=False)
     address = db.Column(db.Text, nullable=False, unique=True)
@@ -38,6 +40,7 @@ class VenueModel(db.Model, BaseModel):
     socialMediaUrl3 = db.Column(db.Text, nullable=True, unique=True)
 
     comments = db.relationship('VenueCommentModel', backref='venue_comments', cascade="all, delete")
+    type = db.relationship('TypeModel', backref='type_venue', secondary=venue_type)
 
     password_hash = db.Column(db.Text, nullable=True)
     @hybrid_property
@@ -73,14 +76,3 @@ class VenueModel(db.Model, BaseModel):
 
         return token
 
-    # def save(self):
-    #     db.session.add(self)
-    #     db.session.commit()
-
-    # def update(self, coffee):
-    #     db.session.add(coffee)
-    #     db.session.commit()
-
-    # def remove(self):
-    #     db.session.delete(self)
-    #     db.session.commit()

@@ -25,6 +25,8 @@ with app.app_context():
         db.session.add_all(venue_comments_list)
         db.session.commit()
 
+
+
         print("bye 👋")
     except Exception as e:
         print(e)

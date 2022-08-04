@@ -1,7 +1,16 @@
+
 from models.venue import VenueModel
 from models.venue_comments import VenueCommentModel
+from models.types import TypeModel
 
-
+venue_type_list = [
+    TypeModel(type="Outdoor"),
+    TypeModel(type="Indoor"),
+    TypeModel(type="Boat"),
+    TypeModel(type="House"),
+    TypeModel(type="Museum"),
+    TypeModel(type="other")
+    ]
 
 venue_list = [
     VenueModel(
@@ -10,6 +19,7 @@ venue_list = [
         email="Windmill@Windmill.com",
         role="Manager", 
         venueName="The Windmill",
+        type = venue_type_list,
         venueImage="https://upload.wikimedia.org/wikipedia/commons/6/6a/Windmill%2C_Brixton_Hill%2C_SW2_%283151353450%29.jpg",
         location="london",
         address="22 Blenheim Gardens, Brixton Hill, London SW2 5BZ", 
@@ -30,3 +40,12 @@ venue_list = [
 
 venue_comments_list = [
     VenueCommentModel(content="This is a great Venue", venue_id=1, artist_id=1)]
+
+venue_type_list = [
+    TypeModel(type="Outdoor"),
+    TypeModel(type="Indoor"),
+    TypeModel(type="Boat"),
+    TypeModel(type="House"),
+    TypeModel(type="Museum"),
+    TypeModel(type="other")
+    ]

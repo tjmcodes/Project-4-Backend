@@ -48,10 +48,10 @@ def get_teas():
     return venue_schema.jsonify(venues, many=True), HTTPStatus.OK
 
 
-@router.route("/venues/<int:venue_idv>", methods=["GET"])
-def get_single_venue(venue_idv):
+@router.route("/venues/<int:venue_id>", methods=["GET"])
+def get_single_venue(venue_id):
 
-    venue = VenueModel.query.get(venue_idv)
+    venue = VenueModel.query.get(venue_id)
 
     if not venue:
         return {"message": "venue not found"}, HTTPStatus.NOT_FOUND
@@ -61,9 +61,9 @@ def get_single_venue(venue_idv):
 
 
 # !  P O S T  A  C O M M E N T  B Y  I D
-# @router.route("/venues/<int:venue_idv>/comments", methods=["POST"])
+# @router.route("/venues/<int:venue_id>/comments", methods=["POST"])
 # @artist_secure_route # only registered and logged in Artists can make request
-# def create_comment(venue_idv):
+# def create_comment(venue_id):
 
 #     comment_dictionary = request.json
 
@@ -72,7 +72,7 @@ def get_single_venue(venue_idv):
 #     except ValidationError as e:
 #         return { "errors": e.messages, "message": "There is no such venue"}, HTTPStatus.NO_CONTENT
 
-#     comment.venue_idv = venue_idv
+#     comment.venue_id = venue_id
 #     comment.save()
 #     print(type(comment))
 #     return venue_comments_schema.jsonify(comment), HTTPStatus.CREATED

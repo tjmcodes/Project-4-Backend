@@ -1,6 +1,6 @@
 from http import HTTPStatus
 
-from flask import Blueprint, request
+from flask import Blueprint, request, g
 from marshmallow.exceptions import ValidationError
 from models.artist import ArtistModel
 # from serialisers.venue_comments import VenueCommentSchema
@@ -79,12 +79,15 @@ def create_comment(artist_id):
 
     comment_dictionary = request.json
 
+
     try:
         comment = artist_comments_schema.load(comment_dictionary)
+        print(comment)
     except ValidationError as e:
+    
         return { "errors": e.messages, "message": "There is no such artist"}, HTTPStatus.NO_CONTENT
 
-    # comment.venue_id = g.current_user
+    comment.venue_id = g.current_user
     comment.artist_id = artist_id
     comment.save()
     print(type(comment))
