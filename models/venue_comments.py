@@ -1,6 +1,6 @@
 from app import db
 from models.base import BaseModel
-# from models.artist import ArtistModel
+from models.artist import ArtistModel
 
 class VenueCommentModel(db.Model, BaseModel):
 

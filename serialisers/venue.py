@@ -1,6 +1,5 @@
 from marshmallow import fields
 from app import ma
-
 from models.venue import VenueModel
 from serialisers.artist_comments import ArtistCommentSchema
 from serialisers.venue_types import TypeSchema
