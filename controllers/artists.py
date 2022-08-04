@@ -7,6 +7,7 @@ from models.artist import ArtistModel
 from serialisers.artist import ArtistSchema
 from serialisers.artist_comments import ArtistCommentSchema
 from middleware.venue_secure_route import venue_secure_route
+from middleware.artist_secure_route import artist_secure_route
 
 
 artist_schema = ArtistSchema()
@@ -71,17 +72,47 @@ def get_single_artist(artist_id):
 
     return artist_schema.jsonify(artist)
 
+# ! U P D A T E  A R T I S T S  B Y  I D
+@router.route("/artists/<int:artist_id>", methods=["PUT"])
+@artist_secure_route # only registered and logged in users can make request
+def update_artist(artist_id):
+    artist_dictionary = request.json
+    # print(coffee_dictionary)
+
+    artist = ArtistModel.query.get(artist_id)
+    print(artist)
+
+    if not artist:
+        return { "message": "Coffee not found" }, HTTPStatus.NOT_FOUND
+
+    try:
+      # .load serializes
+        artist_updated = artist_schema.load(
+          artist_dictionary, # All the fields you are changing
+          instance=artist,  # Existing coffee id that you are updating
+          partial=True # Only updates the fields you are updating, without this you have to fill in the entire fields
+        )
+    except ValidationError as e:
+        return { "errors": e.messages, "message": "Something went wrong"}
+
+    artist.save()
+
+    # coffee = CoffeeModel.query.get(coffees_id)
+    # print(coffee)
+
+    return artist_schema.jsonify(artist_updated), HTTPStatus.OK
+
 
 # !  P O S T  A  C O M M E N T  B Y  I D
 @router.route("/artists/<int:artist_id>/comments", methods=["POST"])
 @venue_secure_route # only registered and logged in users can make request
 def create_comment(artist_id):
     
-    venue_id = g.current_user
-    print (venue_id)
     comment_dictionary = request.json
-    comment_dictionary["venue_id"] = g.current_user.id
     comment_dictionary["artist_id"] = artist_id
+    comment_dictionary["venue_id"] = g.current_user.id
+    # comment_dictionary["venue_venueName"] = g.current_user.venueName
+    # comment_dictionary["venue_role"] = g.current_user.role
     print(comment_dictionary)
 
 
@@ -89,7 +120,7 @@ def create_comment(artist_id):
         comment = artist_comments_schema.load(comment_dictionary)
         print(comment)
     except ValidationError as e:
-    
+        print(e)
         return { "errors": e.messages, "message": "There is no such artist"}, HTTPStatus.NO_CONTENT
 
     # comment.venue_id = g.current_user

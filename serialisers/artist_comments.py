@@ -10,4 +10,4 @@ class ArtistCommentSchema(ma.SQLAlchemyAutoSchema):
 
         include_fk = True
 
-    user = fields.Nested("VenueSchema", many=True)
+    venue = fields.Nested("VenueSchema")

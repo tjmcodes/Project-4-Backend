@@ -14,6 +14,7 @@ genre_schema = GenreSchema()
 
 router = Blueprint("genres", __name__)
 
+# !  P O S T I N G  G E N R E  T Y P E 
 @router.route("/genres", methods=["POST"])
 def post_genres():
     genre_dictionary = request.json
@@ -29,6 +30,7 @@ def post_genres():
     return genre_schema.jsonify(genre), HTTPStatus.CREATED
 
 
+# !  D E L E T E  G E N R E  B Y  I D  T O  A R T I S T  B Y  I D
 @router.route("genres/<int:genre_id>", methods=["DELETE"])
 def remove_genre(genre_id):
     genre = GenreModel.query.get(genre_id)
@@ -40,6 +42,7 @@ def remove_genre(genre_id):
 
     return '', HTTPStatus.NO_CONTENT
 
+# !  P O S T  A  G E N R E  B Y  I D  T O  A R T I S T  B Y  I D
 @router.route("/artists/<int:artist_id>/genres/<int:genre_id>", methods=["POST"])
 @artist_secure_route
 def create_artist_genre(artist_id, genre_id):
