@@ -1,3 +1,4 @@
+import types
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
@@ -15,8 +16,9 @@ ma = Marshmallow(app)
 
 bcrypt = Bcrypt(app)
 
-from controllers import artists, venues, genres
+from controllers import artists, venues, genres, types
 
 app.register_blueprint(artists.router, url_prefix="/api")
 app.register_blueprint(venues.router, url_prefix="/api")
 app.register_blueprint(genres.router, url_prefix="/api")
+app.register_blueprint(types.router, url_prefix="/api")

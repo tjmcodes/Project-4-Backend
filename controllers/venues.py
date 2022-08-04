@@ -1,14 +1,14 @@
 from http import HTTPStatus
 from marshmallow.exceptions import ValidationError
-from flask import Blueprint, request
+from flask import Blueprint, request, g
 from models.venue import VenueModel
 from serialisers.venue import VenueSchema
 from middleware.artist_secure_route import artist_secure_route
-# from serialisers.venue_comments import VenueCommentSchema
+from serialisers.venue_comments import VenueCommentSchema
 # from serialisers.artist_comments import ArtistCommentSchema
 
 venue_schema = VenueSchema()
-# venue_comments_schema = VenueCommentSchema()
+venue_comments_schema = VenueCommentSchema()
 router = Blueprint("users", __name__)
 
 @router.route('/venue-signup', methods=["POST"])
@@ -61,18 +61,23 @@ def get_single_venue(venue_id):
 
 
 # !  P O S T  A  C O M M E N T  B Y  I D
-# @router.route("/venues/<int:venue_id>/comments", methods=["POST"])
-# @artist_secure_route # only registered and logged in Artists can make request
-# def create_comment(venue_id):
+@router.route("/venues/<int:venue_id>/comments", methods=["POST"])
+@artist_secure_route # only registered and logged in Artists can make request
+def create_comment(venue_id):
 
-#     comment_dictionary = request.json
+    comment_dictionary = request.json
+    comment_dictionary["artist_id"] = g.current_user.id
+    comment_dictionary["venue_id"] = venue_id
+    print(comment_dictionary)
 
-#     try:
-#         comment = venue_comments_schema.load(comment_dictionary)
-#     except ValidationError as e:
-#         return { "errors": e.messages, "message": "There is no such venue"}, HTTPStatus.NO_CONTENT
 
-#     comment.venue_id = venue_id
-#     comment.save()
-#     print(type(comment))
-#     return venue_comments_schema.jsonify(comment), HTTPStatus.CREATED
+    try:
+        comment = venue_comments_schema.load(comment_dictionary)
+        print(comment)
+    except ValidationError as e:
+    
+        return { "errors": e.messages, "message": "There is no such artist"}, HTTPStatus.NO_CONTENT
+
+    comment.save()
+    print(type(comment))
+    return venue_comments_schema.jsonify(comment), HTTPStatus.CREATED
