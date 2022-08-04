@@ -76,8 +76,13 @@ def get_single_artist(artist_ida):
 @router.route("/artists/<int:artist_id>/comments", methods=["POST"])
 @venue_secure_route # only registered and logged in users can make request
 def create_comment(artist_id):
-
+    
+    venue_id = g.current_user
+    print (venue_id)
     comment_dictionary = request.json
+    comment_dictionary["venue_id"] = g.current_user.id
+    comment_dictionary["artist_id"] = artist_id
+    print(comment_dictionary)
 
 
     try:
@@ -87,8 +92,8 @@ def create_comment(artist_id):
     
         return { "errors": e.messages, "message": "There is no such artist"}, HTTPStatus.NO_CONTENT
 
-    comment.venue_id = g.current_user
-    comment.artist_id = artist_id
+    # comment.venue_id = g.current_user
+    # comment.artist_id = artist_id
     comment.save()
     print(type(comment))
     return artist_comments_schema.jsonify(comment), HTTPStatus.CREATED
