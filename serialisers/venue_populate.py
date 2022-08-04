@@ -1,15 +1,16 @@
-from marshmallow import fields
-from models.venue import VenueModel
+# from marshmallow import fields
 from app import ma
 
+from models.venue import VenueModel
+# from serialisers.venue_comments import VenueCommentSchema
 
 
-class VenueSchema(ma.SQLAlchemyAutoSchema):
+class VenuePopulateSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
+
         model = VenueModel
         load_instance = True
 
-        exclude = # exclude the fields you don't want to use here.
-        load_only = ('email', 'password')
-
-    password = fields.String(required=True)
+        # exclude = ("password_hash", "location")
+        # load_only = ('email', 'password')
+    
