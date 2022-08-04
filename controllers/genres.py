@@ -42,7 +42,7 @@ def remove_genre(genre_id):
 
 @router.route("/artists/<int:artist_id>/genres/<int:genre_id>", methods=["POST"])
 @artist_secure_route
-def create_tea_note(artist_id, genre_id):
+def create_artist_genre(artist_id, genre_id):
 
     artist = ArtistModel.query.get(artist_id)
 
