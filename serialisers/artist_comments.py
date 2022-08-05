@@ -12,4 +12,4 @@ class ArtistCommentSchema(ma.SQLAlchemyAutoSchema):
         include_fk = True
 
     # venuePopulate = fields.Nested("VenuePopulateSchema")
-    venue = fields.Nested("VenueSchema")
+    venue = fields.Nested("VenueSchema") # nests venue schema in the artist comments. Also links to relationship in artist comment model table. 

@@ -13,7 +13,7 @@ class VenueSchema(ma.SQLAlchemyAutoSchema):
         exclude = ("password_hash",)
         load_only = ('email', 'password')
 
-    comments = fields.Nested("VenueCommentSchema", many=True)
+    comments = fields.Nested("VenueCommentSchema", many=True) # nests comments posted by artist to venue
     password = fields.String(required=True)
     type = fields.Nested("TypeSchema", many=True)
     

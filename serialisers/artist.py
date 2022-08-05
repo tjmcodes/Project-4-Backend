@@ -15,6 +15,6 @@ class ArtistSchema(ma.SQLAlchemyAutoSchema):
         exclude = ("password_hash",)
         load_only = ('email', 'password')
 
-    comments = fields.Nested("ArtistCommentSchema", many=True)
+    comments = fields.Nested("ArtistCommentSchema", many=True) # nests comments posted by venue to artist
     genre = fields.Nested("GenreSchema", many=True)
     password = fields.String(required=True)
