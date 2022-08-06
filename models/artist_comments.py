@@ -7,7 +7,7 @@ class ArtistCommentModel(db.Model, BaseModel):
     __tablename__ = "artist_comments"
 
     content = db.Column(db.Text, nullable=False)
-    ratings = db.Column(db.Integer, nullable=False)
+    rating = db.Column(db.Integer, nullable=False)
     venue_id =db.Column(db.Integer, db.ForeignKey("venues.id"), nullable=False)
     artist_id =db.Column(db.Integer, db.ForeignKey("artists.id"), nullable=False)
     venue = db.relationship('VenueModel', backref='venue')
