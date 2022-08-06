@@ -27,6 +27,7 @@ class ArtistModel(db.Model, BaseModel):
     genre = db.Column(db.Text, nullable=False, unique=False)
     location = db.Column(db.Text, nullable=False, unique=False)
     travel = db.Column(db.Integer, nullable=False, unique=False)
+    totalRatings = db.Column(db.Integer, nullable=False, unique=False)
     price = db.Column(db.Integer, nullable=False, unique=False)
     websiteUrl = db.Column(db.Text, nullable=False, unique=True)
     videoUrl = db.Column(db.Text, nullable=False, unique=True)
