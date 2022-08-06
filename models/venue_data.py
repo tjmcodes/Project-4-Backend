@@ -41,7 +41,7 @@ venue_list = [
 ]
 
 venue_comments_list = [
-    VenueCommentModel(content="This is a great Venue", ratings=4, venue_id=1, artist_id=1)]
+    VenueCommentModel(content="This is a great Venue", rating=4, venue_id=1, artist_id=1)]
 
 venue_type_list = [
     TypeModel(type="Outdoor"),

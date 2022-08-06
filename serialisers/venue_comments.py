@@ -1,7 +1,7 @@
-# from marshmallow import fields
+from marshmallow import fields
 from app import ma
 from models.venue_comments import VenueCommentModel
-# from serialisers.venue_populate import VenuePopulateSchema
+from serialisers.nested_artist_info import NestedArtistInfoSchema
 
 
 class VenueCommentSchema(ma.SQLAlchemyAutoSchema):
@@ -11,8 +11,6 @@ class VenueCommentSchema(ma.SQLAlchemyAutoSchema):
         load_instance = True
         include_fk = True
 
-    # artist = fields.Nested("ArtistSchema")
+    artist = fields.Nested("NestedArtistInfoSchema")
     # venuePopulate = fields.Nested("VenuePopulateSchema")
-    
-
     
