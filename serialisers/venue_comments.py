@@ -1,4 +1,4 @@
-from marshmallow import fields
+# from marshmallow import fields
 from app import ma
 from models.venue_comments import VenueCommentModel
 # from serialisers.venue_populate import VenuePopulateSchema
@@ -12,7 +12,7 @@ class VenueCommentSchema(ma.SQLAlchemyAutoSchema):
         include_fk = True
 
     # artist = fields.Nested("ArtistSchema")
-    venuePopulate = fields.Nested("VenuePopulateSchema")
+    # venuePopulate = fields.Nested("VenuePopulateSchema")
     
 
     

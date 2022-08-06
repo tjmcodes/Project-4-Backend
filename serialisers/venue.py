@@ -10,7 +10,7 @@ class VenueSchema(ma.SQLAlchemyAutoSchema):
         model = VenueModel
         load_instance = True
 
-        exclude = ("password_hash",)
+        exclude = ("password_hash", )
         load_only = ('email', 'password')
 
     comments = fields.Nested("VenueCommentSchema", many=True) # nests comments posted by artist to venue

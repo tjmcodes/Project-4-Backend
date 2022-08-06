@@ -14,10 +14,12 @@ venue_type_list = [
 
 venue_list = [
     VenueModel(
+        email="Windmill@Windmill.com",
         username="Bobby", 
         password="Windmill1",
-        email="Windmill@Windmill.com",
-        role="Manager", 
+        profileImage = "https://res.cloudinary.com/tjmcodes/image/upload/v1656844656/my_found_sounds_pics/r673ncsqnjycl9pztuze.jpg",
+        title="Bob Smith",
+        role="Manager",
         venueName="The Windmill",
         type = venue_type_list,
         venueImage="https://upload.wikimedia.org/wikipedia/commons/6/6a/Windmill%2C_Brixton_Hill%2C_SW2_%283151353450%29.jpg",
@@ -39,7 +41,7 @@ venue_list = [
 ]
 
 venue_comments_list = [
-    VenueCommentModel(content="This is a great Venue", venue_id=1, artist_id=1)]
+    VenueCommentModel(content="This is a great Venue", ratings=4, venue_id=1, artist_id=1)]
 
 venue_type_list = [
     TypeModel(type="Outdoor"),

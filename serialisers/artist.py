@@ -2,6 +2,7 @@ from marshmallow import fields
 from app import ma
 
 from models.artist import ArtistModel
+from serialisers.artist_comments import ArtistCommentModel
 from serialisers.artist_genres import GenreSchema
 
 class ArtistSchema(ma.SQLAlchemyAutoSchema):

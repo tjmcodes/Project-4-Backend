@@ -16,10 +16,11 @@ class VenueModel(db.Model, BaseModel):
     # created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     # updated_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow)
 
-    username = db.Column(db.Text, nullable=False, unique=True)
     email = db.Column(db.Text, nullable=False, unique=True)
+    username = db.Column(db.Text, nullable=False, unique=True)
+    profileImage = db.Column(db.Text, nullable=False, unique=False)
+    title = db.Column(db.Text, nullable=False, unique=False)
     role = db.Column(db.Text, nullable=False, unique=False)
-    
 
     venueName = db.Column(db.Text, nullable=False, unique=True)
     type = db.Column(db.Text, nullable=False, unique=False)

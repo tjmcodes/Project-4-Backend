@@ -38,4 +38,4 @@ artist_list = [
 ]
 
 artist_comments_list = [
-    ArtistCommentModel(content="This is a great coffee", artist_id=1,  venue_id =1)]
+    ArtistCommentModel(content="This is a great coffee", ratings=4, artist_id=1,  venue_id =1)]
