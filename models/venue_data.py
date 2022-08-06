@@ -86,7 +86,6 @@ venue_list = [
         socialMediaUrl2="https://www.youtube.com/user/jamboreevenue", 
         socialMediaUrl3="https://www.facebook.com/jamboreelimehouse",
         socialMediaUrl4="https://twitter.com/jamboreevenue"),
-})
 
 ]
 

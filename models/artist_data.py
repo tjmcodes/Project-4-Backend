@@ -13,11 +13,35 @@ genre_list = [
 # ! List of users
 artist_list = [
     ArtistModel(
+        username="India",
+        password="Teresa55!",
+        email="india@teresa.com",
+        artistName="I. Jordan",
+        profileImage = "https://res.cloudinary.com/tjmcodes/image/upload/ar_1:1,b_rgb:000000,bo_2px_solid_rgb:2f9cff,c_thumb,e_transition,g_auto:face,q_auto,r_100,w_200/v1659801458/i-jordan-20220530_uofrpv.jpg",
+        genre = genre_list,
+        location = "Birmingham",
+        travel = 0-500,
+        price = 5000,
+        websiteUrl = "https://ra.co/dj/ijordan",
+        videoUrl = "https://www.youtube.com/watch?v=tTIP0TUhb7Y",
+        optionUrl = "",
+        musicUrl = "https://open.spotify.com/artist/5RMLpCv3ic2KtGnqJ7eMG4",
+        backgroundCardImage = "https://geo-media.beatport.com/image_size/590x404/3cf3d220-d721-4300-b581-b2e1a0eefbbf.jpg",
+        galleryImage1 = "https://res.cloudinary.com/tjmcodes/image/upload/c_fit,h_614,w_500/v1659801523/fred-again-india-jordan-admit-it-1644506636-1000x1000-cover_szebjt.jpg",
+        galleryImage2 = "https://res.cloudinary.com/tjmcodes/image/upload/c_fit,h_614,w_500/v1659801569/f311a26e-2572-11ec-b991-0ee6b8365494-972x597_ktj6zo.jpg",
+        galleryImage3 = "https://res.cloudinary.com/tjmcodes/image/upload/c_fit,h_614,w_500/v1659802012/i-jordan-for-you-cover-art_yrtfek.jpg",
+        bio = "Emerging as one of Europe’s most exciting producers and DJs, India Jordan is a true disciple of high-energy, fast-paced dance music. Having spent the last 10 years holding down residencies and promoting parties across the UK’s North-East, India’s unique brand of vigorous productions have earned them a spot as one of the country’s most promising talents.",
+        socialMediaUrl1 = "https://www.facebook.com/i.jordan.music/",
+        socialMediaUrl2 = "https://mobile.twitter.com/i_jordan",
+        socialMediaUrl3 = "https://www.youtube.com/channel/UCgMMGVDV32dPP-l9M-lXf2A",
+        socialMediaUrl4 = "https://www.instagram.com/i.jordan/?hl=en-gb"
+        ),
+    ArtistModel(
         username="RiccyM",
         password="Teresa55!",
         email="riccy@teresa.com",
         artistName="Riccy Mitchell",
-        profileImage = "https://res.cloudinary.com/tjmcodes/image/upload/v1656844656/my_found_sounds_pics/r673ncsqnjycl9pztuze.jpg",
+        profileImage = "https://res.cloudinary.com/tjmcodes/image/upload/ar_1:1,b_rgb:000000,bo_2px_solid_rgb:2f9cff,c_thumb,e_transition,g_auto:face,q_auto,r_100,w_200/v1659800976/ab6761610000e5eb1e9f7c130b859ec0922a831c_al6qk1.jpg",
         genre = genre_list,
         location = "London",
         travel = 0-50,
@@ -35,31 +59,7 @@ artist_list = [
         socialMediaUrl2 = "https://twitter.com/riccymitchell",
         socialMediaUrl3 = "https://www.youtube.com/c/RiccyMitchell",
         socialMediaUrl4 = "https://www.instagram.com/riccymitchell/"
-    ),
-    ArtistModel(
-        username="India",
-        password="Teresa55!",
-        email="india@teresa.com",
-        artistName="I. Jordan",
-        profileImage = "https://res.cloudinary.com/tjmcodes/image/upload/v1656610273/my_found_sounds_pics/vnr9dp4owptjkzxnw2qq.jpg",
-        genre = genre_list,
-        location = "Birmingham",
-        travel = 0-500,
-        price = 5000,
-        websiteUrl = "https://ra.co/dj/ijordan",
-        videoUrl = "https://www.youtube.com/watch?v=tTIP0TUhb7Y",
-        optionUrl = "",
-        musicUrl = "https://open.spotify.com/artist/5RMLpCv3ic2KtGnqJ7eMG4",
-        backgroundCardImage = "https://static.wixstatic.com/media/771c27_ee884f5bd7c84dcd8ed1faba69b2039b~mv2.jpg/v1/fill/w_1060,h_944,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/771c27_ee884f5bd7c84dcd8ed1faba69b2039b~mv2.jpg",
-        galleryImage1 = "https://imgproxy.ra.co/_/quality:100/w:484/rt:fill/plain/https://static.ra.co/images/reviews/2022/fred-again-india-jordan-admit-it-1644506636-1000x1000-cover.jpg",
-        galleryImage2 = "https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/2021/10/05002909/f311a26e-2572-11ec-b991-0ee6b8365494-972x597.jpg",
-        galleryImage3 = "https://e.snmc.io/i/600/s/dbdb187959d8091f164dbf4cf330692b/8133555/i-jordan-for-you-cover-art.jpg",
-        bio = "Emerging as one of Europe’s most exciting producers and DJs, India Jordan is a true disciple of high-energy, fast-paced dance music. Having spent the last 10 years holding down residencies and promoting parties across the UK’s North-East, India’s unique brand of vigorous productions have earned them a spot as one of the country’s most promising talents.",
-        socialMediaUrl1 = "https://www.facebook.com/i.jordan.music/",
-        socialMediaUrl2 = "https://mobile.twitter.com/i_jordan",
-        socialMediaUrl3 = "https://www.youtube.com/channel/UCgMMGVDV32dPP-l9M-lXf2A",
-        socialMediaUrl4 = "https://www.instagram.com/i.jordan/?hl=en-gb"
-        )
+    )
 ]
 
 artist_comments_list = [
