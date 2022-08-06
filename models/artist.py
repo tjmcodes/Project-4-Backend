@@ -30,7 +30,7 @@ class ArtistModel(db.Model, BaseModel):
     price = db.Column(db.Integer, nullable=False, unique=False)
     websiteUrl = db.Column(db.Text, nullable=False, unique=True)
     videoUrl = db.Column(db.Text, nullable=False, unique=True)
-    optionUrl = db.Column(db.Text, nullable=True, unique=True)
+    optionUrl = db.Column(db.Text, nullable=True, unique=False)
     musicUrl = db.Column(db.Text, nullable=False, unique=True)
     backgroundCardImage = db.Column(db.Text, nullable=False, unique=False)
     galleryImage1 = db.Column(db.Text, nullable=False, unique=False)
@@ -40,6 +40,7 @@ class ArtistModel(db.Model, BaseModel):
     socialMediaUrl1 = db.Column(db.Text, nullable=False, unique=True)
     socialMediaUrl2 = db.Column(db.Text, nullable=True, unique=True)
     socialMediaUrl3 = db.Column(db.Text, nullable=True, unique=True)
+    socialMediaUrl4 = db.Column(db.Text, nullable=True, unique=True)
 
     genre = db.relationship('GenreModel', backref='genre_type', secondary=artist_genre)
     comments = db.relationship('ArtistCommentModel', backref='artist_comments', cascade="all, delete")
