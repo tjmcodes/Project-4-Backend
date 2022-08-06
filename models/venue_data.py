@@ -59,7 +59,34 @@ venue_list = [
         socialMediaUrl1="https://twitter.com/thedublincastle", 
         socialMediaUrl2="https://www.youtube.com/thedublincastletv", 
         socialMediaUrl3="https://www.instagram.com/thedublincastle/?hl=en",
-        socialMediaUrl4="https://en-gb.facebook.com/groups/thedublincastle/")
+        socialMediaUrl4="https://en-gb.facebook.com/groups/thedublincastle/"),
+
+        VenueModel(
+        email="jamboree@jamboree.com.",
+        username="jamboree1", 
+        password="jamboree1!",
+        profileImage = "https://res.cloudinary.com/tjmcodes/image/upload/v1656844656/my_found_sounds_pics/r673ncsqnjycl9pztuze.jpg",
+        title="Jane Bedford",
+        role=" Manager",
+        venueName="The Jamboree",
+        type = venue_type_list,
+        venueImage="https://images.cm.archant.co.uk/resource/image/3587104/landscape_ratio16x9/448/252/47ba54364c585125d57c68751e5f2827/uH/el-10-jamboree-campaign-5-cabl.jpg",
+        location="london",
+        address="6 St Chads Place,London, WC1X 9HH", 
+        budget=400, 
+        websiteUrl="https://www.jamboreevenue.co.uk/", 
+        videoUrl="", 
+        optionUrl="", 
+        backgroundCardImage="https://www.jamboreevenue.co.uk/wp-content/uploads/2011/05/jamboree.jpg",
+        galleryImage1="https://www.jamboreevenue.co.uk/wp-content/uploads/2011/05/jamboree.jpg", 
+        galleryImage2="https://images.cm.archant.co.uk/resource/blob/3587096/e1c96eaf4761d98d509063bab2fc3386/el-10-jamboree-campaign-1-cabl-data.jpg", 
+        galleryImage3="https://i0.wp.com/www.eastlondonlines.co.uk/ell_wp/wp-content/uploads/2018/03/interior.jpg?resize=750%2C422", 
+        description="Peel black the velvet curtain and step-inside a home-made den of world music with devil may care European bohemia, crackled walls and mismatched furniture, raucous evenings, a rag-tag of eccentric characters, flowing absinthe and mad dancing. Order local ale from the charmingly peculiar bar man, possibly wearing a ripped ladies' pinafore with a string of Pat Butcher pearls … and pull up a seat to watch the Mad Hatter's tea party begin.",
+        socialMediaUrl1="https://www.instagram.com/jamboreevenue/", 
+        socialMediaUrl2="https://www.youtube.com/user/jamboreevenue", 
+        socialMediaUrl3="https://www.facebook.com/jamboreelimehouse",
+        socialMediaUrl4="https://twitter.com/jamboreevenue"),
+})
 
 ]
 
