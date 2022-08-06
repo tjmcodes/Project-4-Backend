@@ -29,10 +29,11 @@ venue_list = [
         galleryImage1="https://i0.wp.com/www.brixtonbuzz.com/wp-content/uploads/2012/02/windmill-brixton-1.jpg?resize=640%2C433", 
         galleryImage2="", 
         galleryImage3="", 
-        description="f there was ever a venue that proved true the old maxim, never judge a book by its cover, The Windmill is it. Though this little back-street pub couldn’t look more unassuming if it tried, its reputation as a champion of great music, and a great place to catch a live gig stretches far and wide. The Windmill has been a lot of things in its lifetime, but morphed into a music venue in the early 2000s simply by chance, when somebody realised that its regular crowd possessed a wealth of skills in areas such as sound engineering, promotion, and music production. Sinche bar has been named as one of the best live music venues not only in London but in the country",
+        description="If there was ever a venue that proved true the old maxim, never judge a book by its cover, The Windmill is it. Though this little back-street pub couldn’t look more unassuming if it tried, its reputation as a champion of great music, and a great place to catch a live gig stretches far and wide. The Windmill has been a lot of things in its lifetime, but morphed into a music venue in the early 2000s simply by chance, when somebody realised that its regular crowd possessed a wealth of skills in areas such as sound engineering, promotion, and music production. Sinche bar has been named as one of the best live music venues not only in London but in the country",
         socialMediaUrl1="https://www.instagram.com/windmillbrixton/?hl=en", 
         socialMediaUrl2="https://en-gb.facebook.com/windmillbrixton/", 
-        socialMediaUrl3="https://twitter.com/WindmillBrixton"),
+        socialMediaUrl3="https://twitter.com/WindmillBrixton",
+        ocialMediaUrl4="https://www.youtube.com/watch?v=qpegm3h79y0"),
 
     VenueModel(
         email="dublincastle@dublincastle.com",
