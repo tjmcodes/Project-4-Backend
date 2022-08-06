@@ -33,7 +33,7 @@ venue_list = [
         socialMediaUrl1="https://www.instagram.com/windmillbrixton/?hl=en", 
         socialMediaUrl2="https://en-gb.facebook.com/windmillbrixton/", 
         socialMediaUrl3="https://twitter.com/WindmillBrixton",
-        ocialMediaUrl4="https://www.youtube.com/watch?v=qpegm3h79y0"),
+        socialMediaUrl4="https://www.youtube.com/watch?v=qpegm3h79y0"),
 
     VenueModel(
         email="dublincastle@dublincastle.com",
