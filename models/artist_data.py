@@ -61,7 +61,33 @@ artist_list = [
         twitterUrl = "https://twitter.com/riccymitchell",
         youTubeUrl = "https://www.youtube.com/c/RiccyMitchell",
         instagramUrl = "https://www.instagram.com/riccymitchell/"
+    ),
+    ArtistModel(
+        username="JoshS",
+        password="Teresa55!",
+        email="josh@teresa.com",
+        artistName="Josh Savage",
+        profileImage = "https://res.cloudinary.com/tjmcodes/image/upload/ar_1:1,b_rgb:000000,bo_2px_solid_rgb:2f9cff,c_thumb,e_transition,g_auto:face,q_auto,r_100,w_200/v1659899266/Josh-Savage-01_l37ev7.jpg",
+        genre = genre_list,
+        location = "London",
+        travel = 0-50,
+        totalRatings = 4,
+        price = 500,
+        websiteUrl = "https://www.joshsavagemusic.com/",
+        videoUrl = "https://www.youtube.com/watch?v=FZI1hzh3STM",
+        optionUrl = "",
+        musicUrl = "https://open.spotify.com/artist/0doJV5UAkt2hGKYrpNsHY5?si=Ok-POxBiQE-_tSclHynemw&nd=1",
+        backgroundCardImage = "https://novamusic.blog/wp-content/uploads/2020/04/Josh-Savage-performing-live-scaled.jpg",
+        galleryImage1 = "https://hotvox.co.uk/wp-content/uploads/2020/03/Josh-Savage-02.jpg",
+        galleryImage2 = "http://www.rightchordmusic.co.uk/wp/wp-content/uploads/2014/04/Josh-368.jpg",
+        galleryImage3 = "https://blog.reverbnation.com/wp-content/uploads/2016/04/1447931981_josh_savamge_RVA_color-31.png",
+        bio = "With no management, publishing or record support to speak of, singer/songwriter Josh Savage has blazed a bright trail through the music industry, which should serve as a beacon to any musician looking to make a name for themselves in the unrecognisable 21st Century landscape. “The most promising new young artist to emerge in Winchester in years” has built a loyal fanbase one living room at a time, and his sprawling career has seen him supporting acts as diverse as Razorlight, Rizzle Kicks, Reverend and the Makers, Roll Deep, and even some acts with names that dont begin with R such as Benjamin Francis Leftwich, John Hiatt, Catfish & The Bottlemen & Ward Thomas. ",
+        fbUrl = "https://www.facebook.com/joshsavagemusic",
+        twitterUrl = "https://twitter.com/joshdjsavage",
+        youTubeUrl = "https://www.youtube.com/user/joshsavagemusic/",
+        instagramUrl = "https://www.instagram.com/joshsavagemusic/"
     )
+
 ]
 
 artist_comments_list = [

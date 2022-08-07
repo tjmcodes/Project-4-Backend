@@ -59,7 +59,7 @@ venue_list = [
         fbUrl="https://en-gb.facebook.com/groups/thedublincastle/",
         twitterUrl="https://twitter.com/thedublincastle", 
         youTubeUrl="https://www.youtube.com/thedublincastletv",
-        instagramUrl4="https://www.youtube.com/thedublincastletv"),
+        instagramUrl="https://www.youtube.com/thedublincastletv"),
 
         VenueModel(
         email="jamboree@jamboree.com.",

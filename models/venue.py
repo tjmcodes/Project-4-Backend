@@ -36,7 +36,7 @@ class VenueModel(db.Model, BaseModel):
     galleryImage2 = db.Column(db.Text, nullable=True, unique=False)
     galleryImage3 = db.Column(db.Text, nullable=True, unique=False)
     description = db.Column(db.Text, nullable=False, unique=True)
-    fburl = db.Column(db.Text, nullable=True, unique=True)
+    fbUrl = db.Column(db.Text, nullable=True, unique=True)
     twitterUrl = db.Column(db.Text, nullable=True, unique=True)
     youTubeUrl = db.Column(db.Text, nullable=True, unique=True)
     instagramUrl = db.Column(db.Text, nullable=True, unique=True)
