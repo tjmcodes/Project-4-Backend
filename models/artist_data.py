@@ -32,10 +32,10 @@ artist_list = [
         galleryImage2 = "https://res.cloudinary.com/tjmcodes/image/upload/c_fit,h_614,w_500/v1659801569/f311a26e-2572-11ec-b991-0ee6b8365494-972x597_ktj6zo.jpg",
         galleryImage3 = "https://res.cloudinary.com/tjmcodes/image/upload/c_fit,h_614,w_500/v1659802012/i-jordan-for-you-cover-art_yrtfek.jpg",
         bio = "Emerging as one of Europe’s most exciting producers and DJs, India Jordan is a true disciple of high-energy, fast-paced dance music. Having spent the last 10 years holding down residencies and promoting parties across the UK’s North-East, India’s unique brand of vigorous productions have earned them a spot as one of the country’s most promising talents.",
-        socialMediaUrl1 = "https://www.facebook.com/i.jordan.music/",
-        socialMediaUrl2 = "https://mobile.twitter.com/i_jordan",
-        socialMediaUrl3 = "https://www.youtube.com/channel/UCgMMGVDV32dPP-l9M-lXf2A",
-        socialMediaUrl4 = "https://www.instagram.com/i.jordan/?hl=en-gb"
+        fbUrl = "https://www.facebook.com/i.jordan.music/",
+        twitterUrl = "https://mobile.twitter.com/i_jordan",
+        youTubeUrl = "https://www.youtube.com/channel/UCgMMGVDV32dPP-l9M-lXf2A",
+        instagramUrl = "https://www.instagram.com/i.jordan/?hl=en-gb"
         ),
     ArtistModel(
         username="RiccyM",
@@ -57,10 +57,10 @@ artist_list = [
         galleryImage2 = "https://subfranticmusic.com/wp-content/uploads/2021/03/XDS_8580-768x1152.jpg",
         galleryImage3 = "https://subfranticmusic.com/wp-content/uploads/2021/03/King-Artwork-1024x1024.png",
         bio = "Riccy has been working as a writer for various UK artists and has spent time on the road and in the studio singing for some of his peers, such as, Michael Kiwanuka, Emeli Sande & Jake Isaac; he was also personally given the opportunity to open for soul diva and legend Jocelyn Brown at Camden’s Jazz Cafe",
-        socialMediaUrl1 = "https://www.facebook.com/riccymitchell",
-        socialMediaUrl2 = "https://twitter.com/riccymitchell",
-        socialMediaUrl3 = "https://www.youtube.com/c/RiccyMitchell",
-        socialMediaUrl4 = "https://www.instagram.com/riccymitchell/"
+        fbUrl = "https://www.facebook.com/riccymitchell",
+        twitterUrl = "https://twitter.com/riccymitchell",
+        youTubeUrl = "https://www.youtube.com/c/RiccyMitchell",
+        instagramUrl = "https://www.instagram.com/riccymitchell/"
     )
 ]
 
