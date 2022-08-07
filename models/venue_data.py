@@ -85,7 +85,7 @@ venue_list = [
         fbUrl="https://www.facebook.com/jamboreelimehouse", 
         twitterUrl="https://twitter.com/jamboreevenue", 
         youTubeUrl="https://www.youtube.com/user/jamboreevenue",
-        instagramUrl="https://www.instagram.com/jamboreevenue/"),
+        instagramUrl=""),
 
 ]
 

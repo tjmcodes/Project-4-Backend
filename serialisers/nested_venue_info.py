@@ -29,8 +29,8 @@ class NestedVenueInfoSchema(ma.SQLAlchemyAutoSchema):
             "description",
             "fbUrl",
             "twitterUrl",
-            "youtubeUrl",
-            "instagramUrl"
+            "youTubeUrl",
+            "instagramUrl",
             "created_at",
             "updated_at",
         )

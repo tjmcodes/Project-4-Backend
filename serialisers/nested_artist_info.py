@@ -29,8 +29,9 @@ class NestedArtistInfoSchema(ma.SQLAlchemyAutoSchema):
             "galleryImage2",
             "galleryImage3",
             "bio",
-            "socialMediaUrl1",
-            "socialMediaUrl2",
-            "socialMediaUrl3",
+            "fbUrl",
+            "twitterUrl",
+            "youTubeUrl",
+            "instagramUrl",
             "created_at",
             "updated_at",)
