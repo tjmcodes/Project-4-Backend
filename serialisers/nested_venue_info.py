@@ -27,9 +27,10 @@ class NestedVenueInfoSchema(ma.SQLAlchemyAutoSchema):
             "galleryImage2",
             "galleryImage3",
             "description",
-            "socialMediaUrl1",
-            "socialMediaUrl2",
-            "socialMediaUrl3",
+            "fbUrl",
+            "twitterUrl",
+            "youtubeUrl",
+            "instagramUrl"
             "created_at",
             "updated_at",
         )
