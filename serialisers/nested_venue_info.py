@@ -21,7 +21,6 @@ class NestedVenueInfoSchema(ma.SQLAlchemyAutoSchema):
             "budget",
             "websiteUrl",
             "videoUrl",
-            "optionUrl",
             "backgroundCardImage",
             "galleryImage1",
             "galleryImage2",
