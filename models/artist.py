@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+from pickle import FALSE
 
 import jwt
 from sqlalchemy.ext.hybrid import hybrid_property
@@ -37,11 +38,11 @@ class ArtistModel(db.Model, BaseModel):
     galleryImage1 = db.Column(db.Text, nullable=False, unique=False)
     galleryImage2 = db.Column(db.Text, nullable=True, unique=False)
     galleryImage3 = db.Column(db.Text, nullable=True, unique=False)
-    bio = db.Column(db.Text, nullable=False, unique=True)
-    fbUrl = db.Column(db.Text, nullable=True, unique=True)
-    twitterUrl = db.Column(db.Text, nullable=True, unique=True)
-    youTubeUrl = db.Column(db.Text, nullable=True, unique=True)
-    instagramUrl = db.Column(db.Text, nullable=True, unique=True)
+    bio = db.Column(db.Text, nullable=False, unique=False)
+    fbUrl = db.Column(db.Text, nullable=True, unique=False)
+    twitterUrl = db.Column(db.Text, nullable=True, unique=False)
+    youTubeUrl = db.Column(db.Text, nullable=True, unique=False)
+    instagramUrl = db.Column(db.Text, nullable=True, unique=False)
 
     genre = db.relationship('GenreModel', backref='genre_type', secondary=artist_genre)
     comments = db.relationship('ArtistCommentModel', backref='artist_comments', cascade="all, delete")
