@@ -5,4 +5,4 @@ class TypeModel(db.Model, BaseModel):
 
     __tablename__ = "types"
 
-    type = db.Column(db.Text, nullable=False, unique=True)
+    type = db.Column(db.Text, nullable=True, unique=False)

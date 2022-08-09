@@ -23,7 +23,7 @@ class VenueModel(db.Model, BaseModel):
     role = db.Column(db.Text, nullable=False, unique=False)
 
     venueName = db.Column(db.Text, nullable=False, unique=True)
-    type = db.Column(db.Text, nullable=False, unique=False)
+    type = db.Column(db.Text, nullable=True, unique=False)
     # venueImage = db.Column(db.Text, nullable=False, unique=True)
     location = db.Column(db.Text, nullable=False, unique=False)
     address = db.Column(db.Text, nullable=False, unique=True)

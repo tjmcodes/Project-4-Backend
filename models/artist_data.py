@@ -34,7 +34,8 @@ artist_list = [
         fbUrl = "https://www.facebook.com/i.jordan.music/",
         twitterUrl = "https://mobile.twitter.com/i_jordan",
         youTubeUrl = "https://www.youtube.com/channel/UCgMMGVDV32dPP-l9M-lXf2A",
-        instagramUrl = "https://www.instagram.com/i.jordan/?hl=en-gb"
+        instagramUrl = "https://www.instagram.com/i.jordan/?hl=en-gb",
+        totalRatings = 4
         ),
     ArtistModel(
         username="RiccyM",
@@ -58,7 +59,8 @@ artist_list = [
         fbUrl = "https://www.facebook.com/riccymitchell",
         twitterUrl = "https://twitter.com/riccymitchell",
         youTubeUrl = "https://www.youtube.com/c/RiccyMitchell",
-        instagramUrl = "https://www.instagram.com/riccymitchell/"
+        instagramUrl = "https://www.instagram.com/riccymitchell/",
+        totalRatings = 4
     ),
     ArtistModel(
         username="JoshS",
@@ -82,7 +84,8 @@ artist_list = [
         fbUrl = "https://www.facebook.com/joshsavagemusic",
         twitterUrl = "https://twitter.com/joshdjsavage",
         youTubeUrl = "https://www.youtube.com/user/joshsavagemusic/",
-        instagramUrl = "https://www.instagram.com/joshsavagemusic/"
+        instagramUrl = "https://www.instagram.com/joshsavagemusic/",
+        totalRatings = 3
     )
 
 ]
