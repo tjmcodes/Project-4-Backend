@@ -24,22 +24,22 @@ class VenueModel(db.Model, BaseModel):
 
     venueName = db.Column(db.Text, nullable=False, unique=True)
     type = db.Column(db.Text, nullable=False, unique=False)
-    venueImage = db.Column(db.Text, nullable=False, unique=True)
+    # venueImage = db.Column(db.Text, nullable=False, unique=True)
     location = db.Column(db.Text, nullable=False, unique=False)
     address = db.Column(db.Text, nullable=False, unique=True)
     budget = db.Column(db.Integer, nullable=False, unique=False)
     websiteUrl = db.Column(db.Text, nullable=False, unique=True)
-    videoUrl = db.Column(db.Text, nullable=True, unique=False)
-    optionUrl = db.Column(db.Text, nullable=True, unique=False)
+    # videoUrl = db.Column(db.Text, nullable=True, unique=False)
+    # optionUrl = db.Column(db.Text, nullable=True, unique=False)
     backgroundCardImage = db.Column(db.Text, nullable=False, unique=False)
     galleryImage1 = db.Column(db.Text, nullable=False, unique=False)
     galleryImage2 = db.Column(db.Text, nullable=True, unique=False)
     galleryImage3 = db.Column(db.Text, nullable=True, unique=False)
     description = db.Column(db.Text, nullable=False, unique=True)
-    fbUrl = db.Column(db.Text, nullable=True, unique=True)
-    twitterUrl = db.Column(db.Text, nullable=True, unique=True)
-    youTubeUrl = db.Column(db.Text, nullable=True, unique=True)
-    instagramUrl = db.Column(db.Text, nullable=True, unique=True)
+    fbUrl = db.Column(db.Text, nullable=True, unique=False)
+    twitterUrl = db.Column(db.Text, nullable=True, unique=False)
+    youTubeUrl = db.Column(db.Text, nullable=True, unique=False)
+    instagramUrl = db.Column(db.Text, nullable=True, unique=False)
 
     comments = db.relationship('VenueCommentModel', backref='venue_comments', cascade="all, delete")
     type = db.relationship('TypeModel', backref='type_venue', secondary=venue_type)
@@ -77,4 +77,3 @@ class VenueModel(db.Model, BaseModel):
 
 
         return token
-
