@@ -10,6 +10,14 @@ from models.venue import VenueModel
 from middleware.venue_secure_route import venue_secure_route
 
 
+
+NOT_FOUND = 404
+STATUS_CREATED = 201
+UNAUTHORIZED = 401
+NO_CONTENT = 204
+OK = 200
+CREATED = 201
+
 Venue_schema = VenueSchema()
 type_schema = TypeSchema()
 
