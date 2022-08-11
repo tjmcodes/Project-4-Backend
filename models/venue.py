@@ -22,6 +22,7 @@ class VenueModel(db.Model, BaseModel):
     title = db.Column(db.Text, nullable=False, unique=False)
     role = db.Column(db.Text, nullable=False, unique=False)
 
+# U S E  T H I S  M O D E L: D E P L O Y  
     # venueName = db.Column(db.Text, nullable=False, unique=True)
     # type = db.Column(db.Text, nullable=True, unique=False)
     # # venueImage = db.Column(db.Text, nullable=False, unique=True)
@@ -41,6 +42,7 @@ class VenueModel(db.Model, BaseModel):
     # youTubeUrl = db.Column(db.Text, nullable=True, unique=False)
     # instagramUrl = db.Column(db.Text, nullable=True, unique=False)
 
+# U S E  T H I S  M O D E L: Q U I C K  P O S T
     venueName = db.Column(db.Text, nullable=True, unique=True)
     type = db.Column(db.Text, nullable=True, unique=False)
     # venueImage = db.Column(db.Text, nullable=False, unique=True)
