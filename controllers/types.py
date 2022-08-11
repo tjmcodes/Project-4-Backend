@@ -23,19 +23,27 @@ type_schema = TypeSchema()
 
 router = Blueprint("types", __name__)
 
+@router.route("/types", methods=["GET"])
+def get_types():
+    types = TypeModel.query.all() # query is an object that lives on model and has methods like .all to interface with SQLAlchemy.
+    print(type(type_schema))
+    print(type(types))
+    return type_schema.jsonify(types, many=True)
+
+
 @router.route("/types", methods=["POST"])
 def post_genres():
     type_dictionary = request.json
 
     try:
-        genre = type_schema.load(type_dictionary)
+        type = type_schema.load(type_dictionary)
 
     except ValidationError as e:
         return { "errors": e.messages, "message": "validation error"}
 
-    genre.save()
+    type.save()
 
-    return type_schema.jsonify(genre), HTTPStatus.CREATED
+    return type_schema.jsonify(type), HTTPStatus.CREATED
 
 
 @router.route("type/<int:type_id>", methods=["DELETE"])
