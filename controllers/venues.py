@@ -8,6 +8,17 @@ from middleware.venue_secure_route import venue_secure_route
 from serialisers.venue_comments import VenueCommentSchema
 # from serialisers.artist_comments import ArtistCommentSchema
 
+
+
+
+NOT_FOUND = 404
+STATUS_CREATED = 201
+UNAUTHORIZED = 401
+NO_CONTENT = 204
+OK = 200
+CREATED = 201
+
+
 venue_schema = VenueSchema()
 venue_comments_schema = VenueCommentSchema()
 router = Blueprint("users", __name__)

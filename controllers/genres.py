@@ -9,6 +9,13 @@ from middleware.artist_secure_route import artist_secure_route
 from models.artist import ArtistModel
 
 
+NOT_FOUND = 404
+STATUS_CREATED = 201
+UNAUTHORIZED = 401
+NO_CONTENT = 204
+OK = 200
+CREATED = 201
+
 artist_schema = ArtistSchema()
 genre_schema = GenreSchema()
 

@@ -1,4 +1,5 @@
 from http import HTTPStatus
+from http.client import CREATED, NO_CONTENT, UNAUTHORIZED
 
 from flask import Blueprint, request, g
 from marshmallow.exceptions import ValidationError
@@ -8,6 +9,14 @@ from serialisers.artist import ArtistSchema
 from serialisers.artist_comments import ArtistCommentSchema
 from middleware.venue_secure_route import venue_secure_route
 from middleware.artist_secure_route import artist_secure_route
+
+
+NOT_FOUND = 404
+STATUS_CREATED = 201
+UNAUTHORIZED = 401
+NO_CONTENT = 204
+OK = 200
+CREATED = 201
 
 
 artist_schema = ArtistSchema()
@@ -34,18 +43,18 @@ def login():
     try:
         credentials_dictionary = request.json
 
-        #get user by email (from postgresql)
+
         artist = ArtistModel.query.filter_by(email=credentials_dictionary["email"]).first()
 
         if not artist:
-            return { "message": "No user found for this email" }
+            return { "message": "No user found for this email" }, HTTPStatus.NOT_FOUND
 
         if not artist.validate_password(credentials_dictionary["password"]):
-            return {"message": "You are not authorized"}, HTTPStatus.UNAUTHORIZED
+            return {"message": "Password Incorrect"}, HTTPStatus.UNAUTHORIZED
 
         token = artist.generate_token()
 
-        return { "token": token, "message": "Welcome Back!" }
+        return { "token": token, "message": "Welcome Back!" }, HTTPStatus.OK
 
     except Exception as e:
         print (e)
