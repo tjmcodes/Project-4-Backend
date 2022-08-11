@@ -11,7 +11,7 @@ venue_type_list = [
 venue_list = [
     VenueModel(
         email="Windmill@Windmill.com",
-        username="Bobby", 
+        username="Bobby",
         password="Windmill1",
         profileImage = "https://res.cloudinary.com/tjmcodes/image/upload/v1656844656/my_found_sounds_pics/r673ncsqnjycl9pztuze.jpg",
         title="Bob Smith",
