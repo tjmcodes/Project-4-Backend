@@ -20,14 +20,14 @@ def post_genres():
     type_dictionary = request.json
 
     try:
-        genre = type_schema.load(type_dictionary)
+        type = type_schema.load(type_dictionary)
 
     except ValidationError as e:
         return { "errors": e.messages, "message": "validation error"}
 
-    genre.save()
+    type.save()
 
-    return type_schema.jsonify(genre), HTTPStatus.CREATED
+    return type_schema.jsonify(type), HTTPStatus.CREATED
 
 
 @router.route("type/<int:type_id>", methods=["DELETE"])
