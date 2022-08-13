@@ -44,11 +44,11 @@ def login():
         credentials_dictionary = request.json
         user = VenueModel.query.filter_by(email=credentials_dictionary["email"]).first()
         if not user:
-            return {"message": "No Registered user with this email, please re-enter email"}
+            return {"message": "No Registered user with this email, please try again"}, HTTPStatus. NOT_FOUND
         if not user.validate_password(credentials_dictionary["password"]):
-            return {"message": "You are not authorized"}, HTTPStatus.UNAUTHORIZED
+            return {"message": "Incorrect Password"}, HTTPStatus.UNAUTHORIZED
         token = user.generate_token()
-        return {"token": token, "message": "Welcome back!"}
+        return {"token": token, "message": "Welcome back!"}, HTTPStatus.OK
     except Exception as e:
         return {"messages": "Something went wrong" }
 

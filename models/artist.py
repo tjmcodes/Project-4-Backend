@@ -47,8 +47,8 @@ class ArtistModel(db.Model, BaseModel):
     # genre = db.Column(db.Text, nullable=False, unique=False)
 
 # U S E  T H I S  M O D E L: Q U I C K  P O S T
-    profileImage = db.Column(db.Text, nullable=True, unique=False)
-    location = db.Column(db.Text, nullable=True, unique=False)
+    profileImage = db.Column(db.Text, nullable=False, unique=False)
+    location = db.Column(db.Text, nullable=False, unique=False)
     willingToTravel =db.Column(db.Boolean, nullable=True, unique=False)
     travel = db.Column(db.Integer, nullable=True, unique=False)
     price = db.Column(db.Text, nullable=True, unique=False)
