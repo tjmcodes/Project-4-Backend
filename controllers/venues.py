@@ -1,4 +1,5 @@
 from http import HTTPStatus
+from http.client import BAD_REQUEST
 from marshmallow.exceptions import ValidationError
 from flask import Blueprint, request, g
 from models.venue import VenueModel
@@ -32,10 +33,10 @@ def register():
         return venue_schema.jsonify(user)
     except ValidationError as e:
         print(e)
-        return {"errors": e.messages, "messages": "Something went wrong"}
+        return {"errors": e.messages, "messages": "Something went wrong"} , HTTPStatus. BAD_REQUEST
     except Exception as e:
         print(e)
-        return { "messages": "Something went wrong" }
+        return { "messages": "Something went wrong" }, HTTPStatus, BAD_REQUEST
 
 
 @router.route('/venue-login', methods=["POST"])
