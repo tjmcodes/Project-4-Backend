@@ -15,6 +15,9 @@ black = "*"
 psycopg2 = "*"
 marshmallow = "*"
 pyjwt = "*"
+sqlalchemy = "==1.3.23"
+flask-cors = "*"
+pipenv = "*"
 
 [dev-packages]
 

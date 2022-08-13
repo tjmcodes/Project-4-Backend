@@ -1,5 +1,5 @@
-db_URI = "postgresql://127.0.0.1:5432/VenuesandArtists_db"
-# db_URI = "postgresql://localhost:5432/VenuesandArtists_db"
+import os
 
-secret = "AlienToughPreparatoryPlacid2"
+db_URI = os.getenv('DATABASE_URL', 'postgresql://localhost:5432/VenuesandArtists_db')
+secret = os.getenv('SECRET', 'AlienToughPreparatoryPlacid2')
 
