@@ -1,5 +1,10 @@
+from ast import If
+from email.headerregistry import UniqueAddressHeader
+from email.policy import HTTP
+from enum import unique
 from http import HTTPStatus
-from http.client import CREATED, NO_CONTENT, UNAUTHORIZED
+from http.client import BAD_REQUEST, CREATED, NO_CONTENT, UNAUTHORIZED
+from xml.dom import VALIDATION_ERR
 
 from flask import Blueprint, request, g
 from marshmallow.exceptions import ValidationError
@@ -17,7 +22,7 @@ UNAUTHORIZED = 401
 NO_CONTENT = 204
 OK = 200
 CREATED = 201
-
+BAD_REQUEST = 400
 
 artist_schema = ArtistSchema()
 artist_comments_schema = ArtistCommentSchema()
@@ -26,16 +31,23 @@ router = Blueprint("artists", __name__)
 
 @router.route('/artist-signup', methods=["POST"])
 def register():
+    artist_dictionary = request.json
+    # artistemail = ArtistModel.query.filter_by(email=artist_dictionary["email"])
+    # artistusername = ArtistModel.query.filter_by(username=artist_dictionary["username"])
+    # if artistemail:
+    #     return {"email": "A user has already registed with that email"}
+    # if artistusername:
+    #     return {"username": "This Username is already taken"}
+    
     try:
-        artist_dictionary = request.json
         artist = artist_schema.load(artist_dictionary)
         artist.save()
         return artist_schema.jsonify(artist)
     except ValidationError as e:
-        return {"errors": e.messages, "messages": "Something went wrong validation"}
+        return {"errors": e.messages, "messages": "Something went wrong validation"} , HTTPStatus.BAD_REQUEST
     except Exception as e:
         print (e)
-        return { "messages": "Something went wrong" }
+        return { "messages": "Something went wrong" }, HTTPStatus.BAD_REQUEST
 
 
 @router.route('/artist-login', methods=["POST"])
@@ -47,7 +59,7 @@ def login():
         artist = ArtistModel.query.filter_by(email=credentials_dictionary["email"]).first()
 
         if not artist:
-            return { "message": "No user found for this email" }, HTTPStatus.NOT_FOUND
+            return { "message": "No Registered user with this email, please try again" }, HTTPStatus.NOT_FOUND
 
         if not artist.validate_password(credentials_dictionary["password"]):
             return {"message": "Password Incorrect"}, HTTPStatus.UNAUTHORIZED
