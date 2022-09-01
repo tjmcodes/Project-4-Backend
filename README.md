@@ -1,155 +1,603 @@
-## ![GA](https://cloud.githubusercontent.com/assets/40461/8183776/469f976e-1432-11e5-8199-6ac91363302b.png) General Assembly, Software Engineering Immersive
-# Project-4-Backend
+<div align="right">
+ <h2>General Assembly - Software Engineering Immersive
+ <img width=35px src="https://cloud.githubusercontent.com/assets/40461/8183776/469f976e-1432-11e5-8199-6ac91363302b.png" />
+  </h2>
+</div>
+ 
+## Project 4 - Full-stack Backend (Frontend link [here](https://github.com/tjmcodes/Project-4-Frontend))
+ 
+Venues and Artists is an application which allows two types of users; artists and venues to connect with each other. Venues can book artists and artists can book venues. It works on the basis of venues recommending artists and artists recommending venues. 
+ 
+<div align="center">
+<a href="https://ibb.co/sbPtFNB"><img src="https://i.ibb.co/FmWnByP/Venues-Artists-Landing-page.png" alt="Venues-Artists-Landing-page" border="0"></a>
+</div>
+ 
+### Link to live site: 
+https://venuesandartists.netlify.app/
+<br/>
+ 
+### Login credentials
+<br/>
+ 
+Please feel free to use the below credentials to login when viewing the project
+<br/>
+ 
+*ARTIST LOGIN:*
+ 
+Email:
+testartist@testartist.com
+ 
+Username:
+testArtist
+ 
+Password:
+Testing1,2,3
+ 
+<br/>
+<br/>
 
-### Project Overview 
+*VENUE LOGIN:*
+ 
+Email:
+testvenue@testvenue.com
+ 
+username:
+testVenue
+ 
+ 
+Password:
+TestUser1!
+ 
+ 
+<br/>
+<br/>
+ 
+ 
+### Contents 
+1. [Project Overview](#projectoverview)
+2. [API / CDN](#api)
+3. [Instructions to install](#instructions)
+4. [Code Installation](#code-installation)
+5. [Technologies used](#tech-used)
+6. [Planning](#planning)
+7. [Whiteboarding](#whiteboarding)
+8. [Project Management](#project-management)
+9. [Creating the Backend](#creating-the-backend)
+10. [Creating the Frontend](#creating-the-frontend)
+11. [Challenge One - Populating user information](#feature-one)
+12. [Challenge Two - Posting genre types](#feature-two)
+13. [Wins](#wins)
+14. [Challenges](#challenges)
+15. [Bugs](#bugs)
+16. [Future Improvements](#future-improvements)
+17. [What have I learned?](#what-have-i-learned)
+18. [Authors](#authors)
 
-This two week pair project involved building a full stack web application which allowed both music venues and artists to view the details of the other in order to find acts to perform or venues which were looking for new talent. The back-end of the project was built using Python and Flask and the front-end using react with the styling being done in tailwind CSS with some plain css. The project was created with two user models to enable a tailored experience to each user depending on the type of user they are. The project includes a directory of venues and artists, more detailed information pages for each item in the directory and separate login and registration paths for each user including a typeform style multi page signup form.
+ 
+<br/>
+<br/>
+ 
+ 
+<div id='projectoverview'></div>
+ 
+### The Overview
+This fourth and last project at GA involved building a full stack web application as a pari in just over two weeks (part-time schedule). It utilises python and flask as a backend and JavaScript, React and TailwindCSS on the frontend. The application was based on two user models being able to interact with each other; a directory of artists and venues. It is reliant on users signing up with their details, and to make the experience engaging the application features a sign up form that is similar to typeform multi page sign up form. 
+ 
+<br/>
 
+<div id='api'></div>
+ 
+### APIs Used:
+ 
+Cloudinary
+“Cloudinary provides a secure and comprehensive API for easily uploading media files from server-side code, directly from the browser or from a mobile application. You can either upload using Cloudinary's REST API or one of Cloudinary's client libraries (SDKs), which wrap the upload API and simplify integration with web sites and mobile applications. Once uploaded, you can manage your assets using the Admin API and automatically deliver them, applying smart optimizations and transformations.” Cloudinary Docs 2022
 
-### Project Brief
+<br/>
+ 
+<div id='instructions'></div>
+ 
+### Instructions to install
+ 
+I recommend that you use the deployed version here but if you do want to run it locally you will need to sign up for an API key from the API provider listed above. I also assume that you have an up to date version of node, Python, and NPM on your machine. 
 
-Build a full-stack application by making your own backend and your own front-end
-Use a Python Flask API using a Flask REST Framework to serve your data from a Postgres database
-Consume your API with a separate front-end built with React
-Be a complete product which most likely means multiple relationships and CRUD functionality for at least a couple of models
-Implement thoughtful user stories/wireframes that are significant enough to help you know which features are core MVP and which you can cut
-Have a visually impressive design to kick your portfolio up a notch and have something to wow future clients & employers. ALLOW time for this.
-Be deployed online so it's publicly accessible.
+<br/>
 
-### Technologies used
+<div id='code-installation'></div>
+ 
+### Code Installation:
+Clone or download this repo and the MERN-Frontend (provide link here) repo then in your Terminal, run the following commands:
+BACKEND:
+Fork and clone this repository
+$ cd into the project directory.
+$ pipenv i to install dependencies.
+$ create .env file and paste your cloudinary key in
+$ If you would like examples of artists and venues posted:  $ pipenv run python seed.py to fill the database with example data and users.
+$ start the back-end server using flask; $ pipenv run flask run
+ 
+ 
+FRONTEND:
+Fork and clone this repository
+$ cd into the frontend directory
+$ npm i to install dependencies.
+$ create .env file and paste your cloudinary key in
+$ mv example.env .env to rename file.
+$ cd .. To move back to the backend folder.
+$ npm run start Navigate to localhost:6000 in your browser (Chrome Recommended).
 
-HTML
-CSS
-JavaScript
+<br/>
+
+<div id='tech-used'></div>
+ 
+### Technologies Used
+ 
+**Server**: 
+Node.js
+Express.js
+PostgreSQL
+Flask
+Heroku
+Insomnia
+ 
+**Client**:
+HTML5
+JavaScript (ES6)
 React
-Python 
-Flask 
-Tailwind CSS
+Netlify
+ 
+**Styling:**
+TailwindCss
+ 
+**GitHub**
+GitHub Flow (using feature branches and relating commits to Jira Tickets)
+ 
+**Productivity**
+Excalidraw
+Miro
+Figma
+ 
+**Project Management**
+JIRA
+ 
+<br/>
+<br/>
+ 
+ 
+## APPROACH
+<div id='planning'></div>
+ 
+### Planning and Research
+ 
+After learning whether this project could be a solo or group project, I was keen to work as a pair based on previous successful collaboration. This was the last project of the course and I wanted to maximise my learning experience by utilising working as a team to best prepare me for working as a team in the future incorporating communication skills, being held accountable for taking ownership on certain parts of the projects and reporting to a team member. 
+ 
+To get started, we discussed and planned what bucket we would use for storing profile images and gallery images that users would post. We spent some considerable time exploring AWS S3 but due to the complexities involved, we decided we would do this as a stretch goal as we were both familiar with the Cloudinary widget tool from the previous project. 
+ 
+We both took the time to research what we could use as technologies to enhance our app and since realising early on that our models would be quite involved, I looked into dynamic form options to create a more easy to use/engaging sign up form for users to sign up with. 
+ 
+<div align="center">
+<a href="https://ibb.co/547s6Bn"><img src="https://i.ibb.co/MSXPsMG/Register-Form.png" alt="Register Form" border="0"></a>
+</div>
 
-### Planning, Whiteboarding and project management
+<br/>
 
-After discussing ideas and settling on a directory for venues and artists we started a more detailed planning process. The first aspect we looked at was what information would be required in our backend models and how these would be structured into tables and what the relationship would be between them. We created a diagram which showed this and that we could refer back to during the project. Due to the large amount of information needed to create a users profile and only a few overlapping fields we decided to create two separate user models to gain more control over our model but also make our tables and Json response easier to work with. 
+ 
+I pitched the idea of using the TypeForm multi-page library and whilst I was able to implement this on a webpage, I was not able to access the information posted from my user account on TypeForm due to needing a paid account to access api and sdk.
+We agreed to make it clean looking and believed that it would be possible to create our own form by either using different React Routes on the frontend for each of the questions, or setting React States for each question. 
+ 
+To learn from the previous project where the styling suffered, some time was spent on considering the user interface. Using the Figma design option was useful to create components and start thinking about how to structure details that would need to be in the backend. I researched Tailwind and practised how to set this up so that we can be mindful when returning our jsx in React. 
 
-<img src="screenshots/Screenshot 2022-08-25 at 19.40.34.png" position/></img>
-Once we had created the back end we then discussed the user journey and drew the below diagram which outlined the structure of the site and how the user would interact with the different pages as they moved through the site. 
 
-<img src="screenshots/Screenshot 2022-07-28 at 20.24.01.png" position/></img>
-Once the user journey had been mapped out we created wireframes in Figma which allowed us to design the site in detail so we could tweak it before coding, this sped up the styling both during the design  process and later in the project as we were writing code which copied the Figma design.
-<img src="screenshots/Screenshot 2022-08-25 at 19.39.32.png" position/></img>
-To manage the project we used JIRA. We created a JIRA board and broke the project down into epics and then further into stories which we then allocated to one of our two sprints. Throughout the project we used JIRA for assigning tasks, keeping track of progress on the JIRA board, leaving comments on stories with explanations and updates. We had stand up at the beginning of each working day on Zoom to update each other  on the work we had done, things we were struggling with and bugs that had been noticed as well as to plan out the day's work. We stayed in contact on Slack updating each other on work we have been doing. This allowed us to keep track of what was going on, plan our time effectively and support each other. 
-<img src="screenshots/Screenshot 2022-08-25 at 19.41.34.png" position/></img>
-### Challenge one - Creating the backend 
+<div align="center">
+ <a href="https://ibb.co/2W3zHVW"><img src="https://i.ibb.co/WGvrj8G/Styling-Landing-Page.png" alt="Styling Landing Page" border="0"></a>
+</div>
 
-Due to the complexity of our backend and this also being our first project created in python we decided that we would work together to create the backend so that we both understood how the backend was constructed and that we both got the benefit of applying the knowledge we had learnt in classes. We started by creating our user models. During the planning phase we decided that we would create two separate user models for Venues and Artists. This decision, although the best in terms of organization of stored data did create issues when constructing the backend when the users tried to interact with each other.
+<br/>
+<br/>
+ 
+<div id='whiteboarding'></div>
 
-This created a significant problem when setting up the backend to allow for comments. For our comments section we wanted to be able to display not just the comment but also information about the user who had posted it eg. username and profile image. To do this we needed to append the relevant user details in the JSON response. To do this we nested the relevant user models inside the comment schema, However this would only work when applied to one of the users as when applied to both of the user models at the same time this created an infinite loop of nested data. 
+### Whiteboarding
+ 
+We worked collaboratively to create a wireframe for our project using excalidraw. This allowed us to pitch ideas quickly for us to decide on what will be implemented for MVP. 
+<br/>
+ 
+<div align="center">
+  <a href="https://ibb.co/DG7NmTr"><img src="https://i.ibb.co/TKHZJdW/Project3-wireframe.png" alt="Project3 wireframe" border="0"></a>
+</div>
 
-A second challenge we faced when creating the backend was regarding creating more advanced error handling. During our first sprint we created basic error handling which would display an error if the registration form failed to submit as can be seen in the uncommented section below. During our second sprint we decided that we would like a more advanced form of error handling which would identify individual errors on fields which as per our model needed to be unique eg. username, email, website url.
-To do this I researched online regarding error handling in flask by looking both at the flask documentation and other independent online resources. I managed to get custom error handling working which would display errors on the page. This improved the user experience by telling them what specifically was wrong. However I was unable to get multiple errors displaying on the page at one time  which is what we desired for the form review page. Due to the short time left before the project deadline this feature was left out of the final deployed version and was commented out of the controller. If there was longer left on the project then I would have liked to spend more time researching and thinking through the problem to get this feature working.  
-``` py
-@router.route('/artist-signup', methods=["POST"])
-def register():
-    artist_dictionary = request.json
-    # artistemail = ArtistModel.query.filter_by(email=artist_dictionary["email"])
-    # artistusername = ArtistModel.query.filter_by(username=artist_dictionary["username"])
-    # if artistemail:
-    #     return {"email": "A user has already registed with that email"}
-    # if artistusername:
-    #     return {"username": "This Username is already taken"}
-    
-    try:
-        artist = artist_schema.load(artist_dictionary)
-        artist.save()
-        return artist_schema.jsonify(artist)
-    except ValidationError as e:
-        return {"errors": e.messages, "messages": "Something went wrong validation"} , HTTPStatus.BAD_REQUEST
-    except Exception as e:
-        print (e)
-        return { "messages": "Something went wrong" }, HTTPStatus.BAD_REQUEST
+<br/>
+<br/>
+ 
+After establishing some ideas about what the app could be, we used Figma to map out the user experience. This then allowed us to think more about what data would be stored in our databases.
+<br/>
+ 
+<div align="center">
+ <a href="https://ibb.co/s9dhY8C"><img src="https://i.ibb.co/pjBgFYQ/Venues-and-Artists-UX.png" alt="Venues and Artists UX" border="0"></a>
+</div>
+
+<br/>
+<br/>
+ 
+Using the Quick Database Diagrams app, allowed us to decide on what tables we would create which allowed us to think deeply about what our models would be. 
+
+<br/>
+ 
+<div align="center">
+<a href="https://ibb.co/GtqmcD1"><img src="https://i.ibb.co/WPLCgXd/Quick-DBD-Venues-and-Artist.png" alt="QuickDBD-Venues and Artist" border="0"></a>
+</div>
+
+<br/>
+<br/>
+ 
+<div id='project-management'></div>
+ 
+### Project management
+ 
+Jira proved to be a powerful tool to use in which we were able to organise Epics and Issues into two sprints. The first sprint was for building the backend and the second for the frontend. We communicated using slack and zoom, which proved to be effective for instantly sharing work. We communicated every day in the two weeks and organised a zoom session almost everyday where we were able to tackle debugging issues as well as updating Jira tickets.
+
+ 
+</br>
+ 
+<div align="center">
+  <a href="https://ibb.co/6tNcBQC"><img src="https://i.ibb.co/xg3KHZT/Project-3-Jira-overview.png" alt="Project-3-Jira-overview" border="0"></a>
+</div>
+
+<br/>
+ 
+Wins: As we had previously worked as a pair before, it was a lot easier to plan the project. We knew what tools to use, and were able to plan successfully thinking about the whole project. The user experience, user interface, the backend and frontend as well as identifying what would be stretch goals. 
+ 
+</br>
+ 
+<div align="center">
+  <a href="https://ibb.co/rkxPD3s"><img src="https://i.ibb.co/y06THpS/Project-3-comments-jira.png" alt="Project-3-comments-jira" border="0"></a>
+</div>
+ 
+</br>
+</br> 
+ 
+<div id=’creating-the-backend'></div>
+ 
+### Creating The Backend
+We started as a pair to set up the backend and it was only when we started to look at models, serialisers, controllers that we would divide up that I would take artists components and Luke would take venues.
+ 
+Wins: This worked well as it meant we could work together and be efficient, saving time by focusing on our tasks. 
+Challenge: As I was not in my usual office set up, I found that by only having one screen made it hard to refer to another screen for my notes, accessing liveshare and referencing code using zoom share. It made me appreciative of the set up I have in my home. 
+ 
+I created the core artists routes for the API (the models, serialisers and controller). 
+This was the backbone of the project and so we spent time working together on our respective components to ensure that it was logically structured and that all of the required information was included in our models.
+ 
+</br>
+ 
+```py
+class ArtistModel(db.Model, BaseModel):
+ 
+   __tablename__ = "artists"
+ 
+   username = db.Column(db.Text, nullable=False, unique=True)
+   email = db.Column(db.Text, nullable=False, unique=True)
+  
+   artistName = db.Column(db.Text, nullable=False, unique=False)
+   profileImage = db.Column(db.Text, nullable=False, unique=False)
+   genre = db.Column(db.Text, nullable=False, unique=False)
+  
+   location = db.Column(db.Text, nullable=False, unique=False)
+   travel = db.Column(db.Integer, nullable=False, unique=False)
+   price = db.Column(db.Integer, nullable=False, unique=False)
+   websiteUrl = db.Column(db.Text, nullable=False, unique=True)
+   videoUrl = db.Column(db.Text, nullable=False, unique=True)
+   optionUrl = db.Column(db.Text, nullable=True, unique=True)
+   musicUrl = db.Column(db.Text, nullable=False, unique=True)
+   backgroundCardImage = db.Column(db.Text, nullable=False, unique=False)
+   galleryImage1 = db.Column(db.Text, nullable=False, unique=False)
+   galleryImage2 = db.Column(db.Text, nullable=True, unique=False)
+   galleryImage3 = db.Column(db.Text, nullable=True, unique=False)
+   bio = db.Column(db.Text, nullable=False, unique=True)
+   socialMediaUrl1 = db.Column(db.Text, nullable=False, unique=True)
+   socialMediaUrl2 = db.Column(db.Text, nullable=True, unique=True)
+   socialMediaUrl3 = db.Column(db.Text, nullable=True, unique=True)
+ 
+```
+ 
+</br>
+ 
+We worked together to create user registration and login. We wanted to ensure that only users who were registered and logged in could perform certain functions therefore we placed these secure routes for deleting, updating, commenting. The secure route was authenticated using a bearer token which was assigned to the user at login; this was implemented using the Python JsonWebToken library.
+ 
+```py
+# ! Password field to apply hash
+   password_hash = db.Column(db.Text, nullable=True)
+ 
+   @hybrid_property
+   def password(self):
+       pass
+ 
+   # ! We then use this password function as a decorator.
+   # ! Called by Flask SQLAlchemy when the model gets created, BEFORE saving to the DB.
+   @password.setter
+   def password(self, password_plaintext):
+       print("inside artist password hash method")
+       # ! Write our code to hash the password. It will give us back an encoded pw
+       encoded_pw = bcrypt.generate_password_hash(password_plaintext)
+       # ! The decoded password, that we actually want to store.
+       self.password_hash = encoded_pw.decode('utf-8')
+ 
+   def validate_password(self, plaintext_password):  
+       return bcrypt.check_password_hash(self.password_hash, plaintext_password)
+ 
+ 
+```py
+def generate_token(self):
+       payload = {
+           # timedelta(days=1) --> you can change this to do different amount
+           "exp": datetime.utcnow() + timedelta(days=1),
+           "iat": datetime.utcnow(),
+           "sub": self.id,
+       }
+  
+       # Get the token
+       token = jwt.encode(
+           payload,
+           secret,
+           algorithm="HS256", # keywords after the 2 positional arguments
+       )
+ 
+       return token
+ 
+```
+ 
+</br>
+</br>
+ 
+<div id=’creating-the-frontend'></div>
+ 
+### Creating The Frontend
+
+As we wanted to implement Tailwind in our project, we followed the documentation for creating a react app and installing tailwindcss. Once all the dependencies were installed we were able to display some information from our backend API. 
+
+We initially set up the routes together, creating the components and importing them for the routes. 
+
+We spent considerable time working on the styling for the ‘Landing Page’. This allowed us to refer to the Figma design and try to reconstruct layout and card details whilst learning how to use tailwind. The thinking behind spending time on this was so that we could reuse the styling for the other pages.
+
+<br/>
+<br/>
+ 
+<div id='feature-one'></div>
+ 
+### Challenge One - being able to populate users when making comments on the backend.
+ 
+One of the challenges we had was being able to populate users information when they were making comments. This was due to the fact that there were two models and since table relationships were being referred to, we kept experiencing issues with looping.  Some time was spent on being able to establish the right table relationship without causing an infinite loop. 
+After spending a few hours, revising class notes and working through methodically together, I took the time to ask our instructor for help/guidance. 
+
+Here is an example of the help that was requested: 
+“...we were able to populate the user’s info by nesting the venue schema onto the comments field posted by the venue to the artist.  However, we can’t get this working the other way (artist posting a comment to venue with the nested artist schema) due to the circular dependencies between the 2 models.
+So, we have explored duplicating the artist schema (ie. artist_populate.py; ArtistPopulateSchema class which has the same information as ArtistSchema) however, we are getting stuck on where we link the relationship on the model as we keep getting the recursion error.
+class VenueCommentModel(db.Model, BaseModel):
+ 
+    __tablename__ = "venue_comments"
+ 
+    content = db.Column(db.Text, nullable=False)
+    artist_id =db.Column(db.Integer, db.ForeignKey("artists.id"), nullable=False)
+    venue_id =db.Column(db.Integer, db.ForeignKey("venues.id"), nullable=False)
+    # artist=db.relationship("ArtistModel", backref="artist") --> This causes the loop. 
+   
+RecursionError: maximum recursion depth exceeded in comparison
+ 
+Our instructor challenged us to think about what the problem was and to break it down. 
+So looks like:
+VenueSchema -> VenueCommentSchema -> ArtistSchema -> ArtistCommentSchema -> VenueSchema is your loop.
+Since you now know how to break a loop with an alternative schema, you need to ask yourself: What do you really need to show on the frontend? How much information do you really need to send back for where you need to call the venue endpoint? This will tell you which schema you should replace with the non-nested equivalent.
+ 
+It turned out that we did not refer to the correct venue relationship in our comment model as we were referring to the table name of the model as opposed to referring to the db.relationship within the model.  This was a steep learning curve as it allowed us to trace through the necessary code and understand how it all works together. The naming conventions were also important too, as often this took time to understand due to not having named appropriately. 
+Time was taken to rename these. 
+ 
+```python 
+ 
+from app import ma
+ 
+ 
+from models.venue import VenueModel
+ 
+# from serialisers.venue_comments import VenueCommentSchema
+# from serialisers.venue_types import TypeSchema
+ 
+class NestedVenueInfoSchema(ma.SQLAlchemyAutoSchema):
+ 
+   class Meta:
+       model = VenueModel
+       load_instance = True
+ 
+       exclude = (
+           "password_hash",
+           "username",
+           "email",
+           "type",
+           "location",
+           "address",
+           "budget",
+           "websiteUrl",
+           "backgroundCardImage",
+           "galleryImage1",
+           "galleryImage2",
+           "galleryImage3",
+           "description",
+           "fbUrl",
+           "twitterUrl",
+           "youTubeUrl",
+           "instagramUrl",
+           "created_at",
+           "updated_at",
+       )
+ 
+       # load_only = ('venueName', 'title', 'role', 'profileImage')
 
 ```
-
-### Challenge Two - Signup form
-
-One part of the project that I spent a significant amount of time working on was the signup form. When we planned the project we decided that as the signup form was going to be long we wanted it to be broken up into a more user friendly multi page form which was inspired from the typeform style.
-
-The challenge which this presented was how to create the form that one question would appear at once but also the typed response would be saved and then submitted at the end of the form to create the user. Initially I looked into creating separate react components for each stage of the form which would be rendered when the next step button was clicked. The main advantages of this method was clean and readable code and the ability to reuse components between both user sign up forms. However the major complication in this method was in the storage and passing of form data. With multiple components this could involve passing large amounts of state which would complicate the logic. With a limited time window to work on this project I looked for an alternative.
-
-The way in which I decided to create this was through the use of a single react component which used conditional rendering to show questions depending on the status of state. I firstly created state for each of the questions which I would have with the default state set to false except for the first question
+ 
+</br>
+</br>
+ 
+<div id='feature-two'></div>
+ 
+### Challenge Two - Posting Genre Types (many to many relationship)
+ 
+Similar challenges presented itself with regards to establishing the many-to-many relationship in PostgreSQL, such as posting genre types when Artists signed up. 
+Through troubleshooting, we were able to make requests using Insomnia to the backend. However, when trying to post from the frontend, I was not able to do this successfully using the react form. I knew that I had to set the states of the genre but I was unable to retrieve the data within the array of objects. I narrowed it down to 4 areas; the initial state, the handleChange function, the genre question and the handleSubmit function.
+ 
+I would try many different instances, such as an array of empty string, with object and empty string, mapping through data in the handleChange. Making use of the network tab in the chrome inspect console proved to be very useful when troubleshooting this. By clicking on the requests that were being made and checking the preview, response and payload information. I referred to the Insomnia request that was successfully made and ensured that I was calling the correct data: 
+ 
+JSON request:
+</br>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/PMk8FF7/Insomnia-request.png" alt="Insomnia request" border="0"></a>
+ 
+JSON data: 
+ 
+<a href="https://ibb.co/Y4gCbTB"><img src="https://i.ibb.co/qL6SxFY/genre-array-of-object-s.png" alt="genre-array-of-object-s" border="0"></a>
+ 
+ 
 ``` js
-const [Q1, setQ1] = React.useState(true)
-const [Q2, setQ2] = React.useState(false)
-
-```
-After creating this state I then created the questions which would be rendered. The questions contained a ternary operator that would check if the state is true and if it was then would display the question on the page if it was not then it would display nothing. To allow the user to control movement through the form I created a next step and back buttons which when clicked would trigger the post function which matched the question number.
-``` js
- {Q4 ? <>
-        <div className={styles.questionbox}>
-          <h3 className={styles.h3}>What is your website address?</h3>
-          <div className={styles.titlebanner}>
-          </div>
-          <input 
-            onChange={handleChange} 
-            className={styles.textinput} 
-            type="text" 
-            placeholder="Enter your website address (url)"
-            name="websiteUrl" 
-            value={formData.websiteUrl}
-          />
-          {errors.websiteUrl && <small className="errors">{errors.websiteUrl}</small>}
-          <button onClick={postQ4} className={styles.nextbutton}>Next Step</button>
-          <button onClick={postQ4} className={styles.backbutton} value='back'><i className="fa-solid fa-arrow-left-long"></i> Previous step</button>
-        </div></> : null }
+ 
+const [genreType, setGenreType] = React.useState(
+   { genre: "" })
 
 ```
 
-The post function firstly set the state of the question to false which causes the question to disappear from the screen as per the ternary operator above if the state is false nothing is displayed. The function then uses if statements to determine which screen to render next. If the value of the button is “back” then the function will set the previous questions state to true and therefore render this on the page. If not then it will set the next question to true and display this. In this form I also included a progress bar which gets filled in as the user proceeds through the form. This function also assigns a new value to that progress bar dependent upon which button is clicked.
-``` js
- function postQ4(event) {
-    setQ4(false)
-    if (event.target.value === 'back') {
-      setQ3(true)
-      progressBar.value = 30
-    } else {
-      setQ5(true)
-      progressBar.value = 40
-    }
-  }
+Then when the artists enter the value in (string), this had to be included on the ‘handleChange’ function: 
 
+```js
+
+function handleChange(e) {
+
+   const { name, value } = e.target
+
+  setFormData({
+     ...formData, //  This is whatever the form data was before, all it's fields.
+     [name]: value,
+   })
+
+   setErrors({
+     ...errors,
+     [name]: '',
+   })
+
+   setGenreType({
+     genre: [{ genre: (e.target.value) }],
+     // genre: genres.map(genreElem => ({ genre: genreElem.value })),
+     // genreArray: e.target.value,
+     // genreObjects: genreArray.map(genreElem => ({ genre: genreElem.value })),
+   })
+   // console.log(genreType)
+ }
 ```
 
-There Is one weakness in the code which is written. The weakness is that it is very repetitive as each question has its own state and its own post function. This makes the code difficult to navigate and makes it harder to maintain as amending one item would require the modification of all post functions and states. Due to the limited time available on this project I did not have the opportunity to refactor this code to find a more succinct way of writing this. However If I had the chance i would have liked to work on creating a single function which would be able to render the questions making the code easier to read and easier to maintain.
 
-### Screenshots
-<img src="screenshots/Screenshot 2022-08-12 at 17.45.27.png" position/></img>
-<img src="screenshots/Screenshot 2022-08-25 at 19.43.25.png" position/></img>
-<img src="screenshots/Screenshot 2022-08-25 at 19.43.08.png" position/></img>
-<img src="screenshots/Screenshot 2022-08-10 at 23.29.37.png" position/></img>
+Then the question had to call the handlechange function: 
 
+```js
+{Q10 ? <>
+       <div className={styles.questionbox}>
+         <div className={styles.titlebanner}>
+           <h3 className={styles.h3}>What genre is your music?</h3>
+         </div>
+         <input
+           placeholder="Enter genre in here"
+           onChange={handleChange}
+           className={styles.textinput}
+           type="text"
+           name="genre"
+           value={formData.genre}
+         />
 
-### Wins 
+         {errors.genre && <small className="errors">{errors.genre}</small>}
+         <button onClick={postQ10} className={styles.nextbutton}>Review and submit</button>
+         <button onClick={postQ10} className={styles.backbutton} value='back'><i className="fa-solid fa-arrow-left-long"></i> Previous step</button>
+       </div></> : null }
+```
 
-We were able to create a website within the timeframe which was functional and met our MVP goals, the site included a slick UI which matched or improved upon our initial figma wireframe designs. 
-We were able to create the multi page sign up form and get this working reliably.
-We managed to overcome our initial struggles with the backend and the two user model to get trickier features such as the nested comments to work as required. 
-Lessons Learnt 
+Resulting on the updating the form on handlesubmit function: 
 
-When using frameworks or libraries to understand and account for the possibility they may act differently when deployed in the case of this project the Tailwind styling did not look the same in the deployed version as the localhost version and time was needed to fix this which was not available at the end of the project.
-Ensure that testing is done incrementally and not left till the end of the feature. This would have made debugginging easier and quicker as it would have been easier to see exactly what was breaking the feature rather than searching through a number of changes to see where the error was. 
+```js 
 
-### Known Bugs
+// F O R M   S U B M I T //
+ async function handleSubmit(event) {
+   event.preventDefault()
+   const newFormData = {
+     ...formData,
+     ...genreType,
+   }
+   try {
+     await axios.post(`${baseUrl}/artist-signup`, newFormData)
+     updateButton(!button)
+     setreview(false)
+     setproccedlogin(true)
+   } catch (err) {  
 
-On both sign up forms if no data is entered on the first question then the progress bar does not move on all other pages it moves regardless however not on this page.
-Submitting the form to register does not always submit if a field is not valid and no error is displayed on the page error handling is needed to ensure that the user knows that something is wrong and the form was not submitted successfully
+	}
+}
+```
 
-Possible future developments 
-Refactor the code on the signup form to create one function which handles rendering making it easier to read and maintain.
-Create a contact button on the individual venue/artist page which allows the user to send a message to the other user which the user would be able to view when they logged in to their account 
-Advanced error handling on the signup form that displays all errors at once to allow the user to go back and change all invalid fields. 
-Edit button on form review screen so users could edit invalid fields without having to go back through the form which is time consuming.
+ 
+</br>
+</br>
+ 
+<div id='wins'></div> 
+ 
+### WINS: 
+ 
+Planning
+The planning and the preparation of the project was a huge win.  We were able to brainstorm our ideas and use the relevant productivity tools to capture everybody’s ideas. We agreed quite quickly to what we would all be working towards very early on, meaning that we could get on and start wireframing and provide some pseudo codes etc. 
+ 
+Working as a pair to set up the backend and front end enabled us to consolidate our learning from class notes as well as learning from each other.  Working on our allocated models allowed us to work together but take ownership.  We learned the importance of communicating with one another, by checking naming conventions in order to provide consistency and to standardise areas of code we were working on.
+ 
+ 
+</br>
+</br>
+ 
+<div id='challenges'></div>
+ 
+### CHALLENGES: 
+ 
+For the first part of the first week, I was away from my usual location and realised that the personal hotspot did not allow me to make requests using the localhost. Thankfully, I was at least able to communicate on zoom / liveshare and push/pull code. Whilst I was not able to check requests made to the API and seed data, my partner was able to and came to the conclusion that it was due to not being on private wifi connection. 
 
-### Created with 
+Styling was still the biggest problem for this project. Being able to implement a new framework for styling in order to show progression and learning from previous projects did not result in the expected positive outcome. 
+Whilst the styling was being applied throughout the project, when it came to deployment, it did not translate the same way and resulted in inconsistency.  There were no tell signs that Tailwind Css was not behaving as expected, except when implementing a menu dropdown with @headlessui library, which was a component designed to integrate with Tailwind Css.  This was one of the last styling features I was trying to integrate before deployment. I was able to re-code the component to have it showing correctly in the live server but when it was deployed it was showing incorrectly. 
+We did not have time to debug before the presentation deadline so it is on the list to investigate for future improvements to be made. 
+ 
+ 
+</br>
+</br> 
+ 
+<div id='bugs'></div>
+ 
+### BUGS:
+Not able to post comments
+Likes
+Selecting multiple fields for posting genre types
+Dashboard area
 
-Teresa Morini -- https://github.com/tjmcodes
+<a href="https://ibb.co/jhSTD5H"><img src="https://i.ibb.co/Mnms7h9/List-of-debugs.png" alt="List-of-debugs" border="0"></a>
+ 
+ 
+<div id='future-improvements'></div>
+ 
+### FUTURE IMPROVEMENTS:  
+ 
+We were able to make good use of Jira when documenting stretch goals and hope to work through these to improve our app. 
+ 
+ 
+<a href="https://ibb.co/rvjs3jM"><img src="https://i.ibb.co/cxBLwBt/Stretch-Goals.png" alt="Stretch-Goals" border="0"></a>
+ 
+</br>
+</br>
+ 
+<div id='what-have-i-learned'></div> 
+ 
+### WHAT HAVE I LEARNED? 
+I realised that I had strong backend knowledge but when moving over to the frontend knowledge, I struggled to recall the use of React states and useEffects for rendering and re-rendering information needed. Working with a partner who had strong React skills was a great opportunity for me to work alongside and learn from which provided me with confidence to move forward with my own projects. 
 
+Despite a successful start in the planning stages by successfully creating the design prototype in Figma, I have learned that when researching libraries and frameworks to use for applications, it is always useful to research and foresee any potential challenges when it comes to deploying the web app. Understanding the whole pipeline and full life cycle of developing an app, this has been one of the main learning points that I will implement moving forward. 
 
+ 
+<div id='authors'></div> 
+
+### AUTHORS
+
+- [Luke O'Brien](https://github.com/luke-o-brien)
+- [Teresa Morini](https://github.com/tjmcodes)
+---
